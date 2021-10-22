@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #335a63;">
+         <children>
+            <Text fill="#f5f5f5" layoutX="196.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to First Aid Clinic" textAlignment="CENTER" wrappingWidth="208.685546875">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <Text layoutX="167.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign into your First Aid Clinic Account" textAlignment="CENTER">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="usernameLogin" layoutX="196.0" layoutY="2.0" prefHeight="25.0" prefWidth="209.0" promptText="Username/Email">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="passwordLogin" layoutX="196.0" layoutY="41.0" prefHeight="25.0" prefWidth="209.0" promptText="Password">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="signIn" layoutX="237.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Sign in" textAlignment="CENTER">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="createAccountReq" layoutX="237.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Create an account" textAlignment="CENTER">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</VBox>
