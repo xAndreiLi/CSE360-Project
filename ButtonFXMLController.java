@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,7 +19,7 @@ public class ButtonFXMLController implements Initializable{
 
     
     @FXML 
-	protected void handleCreateAccountButtonAction(ActionEvent e){
+	protected void handleCreateAccountButtonAction(ActionEvent e) throws IOException{
  		Stage stage;
 		Parent root;
 		System.out.println("Pressed");
