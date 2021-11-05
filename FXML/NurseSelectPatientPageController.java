@@ -11,7 +11,9 @@ public class PleaseProvideControllerClassName {
     private Button editVitalsButton;
 
     @FXML
+    private Button goToPatientInfo;
+
+    @FXML
     private Text selectedPatient;
-    //changes
 
 }
