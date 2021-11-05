@@ -1,12 +1,16 @@
 //worked on by Hy Nguyen
 
+// 11-05-2021
+// Still waiting on the Message Handler to set up operations. 
+// Still need to work on the patient Handler
+
 public class Patient {
 
     //Patient Attributes
     float weight, bodyTemp, bloodPres; //vitals taken by Nurse
     String patientEmail, patientFName, patientLName, patientNumber, height,//Patient info and reason for visit
-        emerFName, emerLName, emerEmail, emergenNumber; //Emergency Contact Info
-    Doctor currenDoctor;
+        emerFName, emerLName, emerEmail, emergenNumber, medication; //Emergency Contact Info
+    Doctor currentDoctor;
     MessageHandler messageHandler;
     String[] patientHistory, dateOfBirth, visitReason;
 
@@ -24,6 +28,7 @@ public class Patient {
         this.emerLName = "Doe";
         this.emerEmail = "janedoe@doe.com";
         this.emergenNumber = "000-000-0000";
+        this.medication = "";
         //Setting default vitals
         this.weight = 0;
         this.height = "0 ' 0";
@@ -80,6 +85,14 @@ public class Patient {
         this.bloodPres = bloodPres;
     }
 
+    void assignDoctor(Doctor doctor){
+        this.currentDoctor = doctor;
+    }
+
+    void assignMedication(String medication){
+        this.medication = medication;
+    }
+
     //Getters for the View Own Patient Info
     float getWeight(){
         return this.weight;
@@ -91,6 +104,47 @@ public class Patient {
 
     float getbloodPres(){
         return this.bloodPres;
+    }
+
+    String getPatientEmail(){
+        return this.patientEmail;
+    }
+
+    String getPatientFirstName(){
+        return this.patientFName;
+    }
+
+    String getPatientLastName(){
+        return this.patientLName;
+    }
+    String getPatientFullName(){
+        return this.patientFName + " " + this.patientLName;
+    }
+
+    String getPhoneNumber(){
+        return this.patientNumber;
+    }
+
+    String getHeight(){
+        return this.height;
+    }
+
+    String getEmergencyFirstName(){
+        return this.emerFName;
+    }
+
+    String getEmergencyLastName(){
+        return this.emerLName;
+    }
+    String getEmergencyFullName(){
+        return this.emerFName + " " + this.emerLName;
+    }
+
+    String getEmergencyEmail(){
+        return this.emerEmail;
+    }
+    String getEmergencyPhoneNumb(){
+        return this.emergenNumber;
     }
 
     
