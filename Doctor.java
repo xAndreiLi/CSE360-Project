@@ -11,6 +11,11 @@ public class Doctor {
 
     private MessageHandler messageHandler;
 
+    // default constructor
+    public Doctor() {
+
+    }
+
     public void setPatient(Patient patient) {
         currentPatient = patient;
     }
