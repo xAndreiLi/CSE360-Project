@@ -2,7 +2,7 @@
 
 // 11-05-2021
 // Still waiting on the Message Handler to set up operations. 
-// Still need to work on the patient Handler
+// Still need to work on the patient History
 
 public class Patient {
 
