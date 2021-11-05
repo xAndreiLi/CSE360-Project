@@ -13,7 +13,7 @@ public class Doctor {
 
     // default constructor
     public Doctor() {
-
+        messageHandler = new MessageHandler();
     }
 
     public void setPatient(Patient patient) {
