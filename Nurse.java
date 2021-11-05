@@ -1,3 +1,5 @@
+import Patient;
+
 public class Nurse {
 	//work done by Long Ly
     //Nurse responsibities
@@ -12,9 +14,14 @@ public class Nurse {
     */
 
     //Nurse Constructor
-    public Nurse(){
-
+    //WIP
+    public Nurse(Patient currentPatent){
+        
     }//end of Nurse Constructor
+
+    public void updatePatientVitals(float weight, float height, float bodytemp, float bloodPres){
+        updateVitals(weight, height, bodytemp, bloodPres);
+    }
 
    
 }
