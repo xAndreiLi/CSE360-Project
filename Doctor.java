@@ -7,6 +7,8 @@ public class Doctor {
 
     public Patient currentPatient;
 
+    // TODO: something something patient list
+
     private MessageHandler messageHandler;
 
     public void setPatient(Patient patient) {
