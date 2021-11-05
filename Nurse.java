@@ -15,7 +15,12 @@ public class Nurse {
 
     //Nurse Constructor
     //WIP
-    public Nurse(Patient currentPatent){
+    private Patient patient;
+    private Doctor[] doctors;
+    private PatientList PatientList;
+    private MessageHandler messagehandler;
+
+    public Nurse(){
         
     }//end of Nurse Constructor
 
