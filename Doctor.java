@@ -38,6 +38,6 @@ public class Doctor {
 
     private void prescribeMedication(String medication) {
         // gives medication to patient
-
+        // patient.assignMedication(medication)
     }
 }
