@@ -16,6 +16,7 @@ public class MessageHandler {
 
     }
 
+    // creates a new message
     public void createNewMessage(Doctor doctor, Patient patient) throws IOException {
         // create a file
         String fileName = "message.txt";
@@ -32,5 +33,32 @@ public class MessageHandler {
         }
         // create new file with that file name
         message.createNewFile();
+    }
+
+    // read existing message
+    public void readMessage(String filename) {
+        File message;
+
+        message = findMessage(filename);
+    }
+
+    /**
+     * This method finds methods
+     * 
+     * @param filename
+     * @return
+     */
+    public File findMessage(String filename) {
+        File fileToReturn, tempFile;
+
+        tempFile = new File(filename);
+
+        if (tempFile.exists()) {
+            fileToReturn = tempFile;
+        } else {
+            fileToReturn = null;
+        }
+
+        return fileToReturn;
     }
 }
