@@ -34,10 +34,11 @@ public class Doctor {
 
     private void updatePatientHistory() {
         // updates patient history
+        // TODO: figure out how to check if patient history[i] is checked
     }
 
     private void prescribeMedication(String medication) {
         // gives medication to patient
-        // patient.assignMedication(medication)
+        currentPatient.assignMedication(medication);
     }
 }
