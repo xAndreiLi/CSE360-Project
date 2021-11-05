@@ -15,9 +15,10 @@ public class Doctor {
 
     public void examinePatient() {
         // examines currentPatient here
+        String medication = "";
 
         updatePatientHistory();
-        prescribeMedication();
+        prescribeMedication(medication);
     }
 
     public void messagePatient(Patient patient) {
@@ -25,10 +26,11 @@ public class Doctor {
     }
 
     private void updatePatientHistory() {
-
+        // updates patient history
     }
 
-    private void prescribeMedication() {
+    private void prescribeMedication(String medication) {
+        // gives medication to patient
 
     }
 }
