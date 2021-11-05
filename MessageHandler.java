@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * Message Handler class handles all message-related functions. Uses I/O file
@@ -17,6 +18,7 @@ public class MessageHandler {
     }
 
     // creates a new message
+    // TODO: need to figure out how to link the message to the doctor and patient
     public void createNewMessage(Doctor doctor, Patient patient) throws IOException {
         // create a file
         String fileName = "message.txt";
@@ -35,18 +37,42 @@ public class MessageHandler {
         message.createNewFile();
     }
 
-    // read existing message
-    public void readMessage(String filename) {
+    /**
+     * This method reads existing messages. If there is no message found, it throws
+     * an exception
+     * 
+     * @param filename - the name of the file
+     * @throws FileNotFoundException exception
+     */
+    public void readMessage(String filename) throws FileNotFoundException {
         File message;
+        Scanner reader;
+        String data;
 
         message = findMessage(filename);
+
+        if (message == null) {
+            // UH OH THERE IS NO EXISTING MESSAGE
+            System.out.println("Cannot find message: " + message);
+        } else {
+            reader = new Scanner(message);
+
+            while (reader.hasNextLine()) {
+                data = reader.nextLine();
+                // do something with data
+                System.out.println(data);
+            }
+
+            reader.close();
+        }
     }
 
     /**
-     * This method finds methods
+     * This method finds existing messages. If there is no message, then we return
+     * null
      * 
-     * @param filename
-     * @return
+     * @param filename - the name of the message
+     * @return either the file or null if file not found
      */
     public File findMessage(String filename) {
         File fileToReturn, tempFile;
