@@ -24,23 +24,21 @@ public class MessageHandler {
      * existing <code>File</code> that holds previous messages between Doctor and
      * Patient
      * 
-     * @param sender   - the object that is sending the message (i.e. Doctor or
-     *                 Patient)
-     * @param receiver - the object that is receiving the message (i.e. Patient or
-     *                 Doctor)
-     * @param message  - the message itself
+     * @param doctor  - the doctor object
+     * @param patient - the patient object
+     * @param message - the message itself
      * @throws IOException
      */
-    public void writeMessage(Object sender, Object receiver, String message) throws IOException {
+    public void writeMessage(Doctor doctor, Patient patient, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         // using hash code for doctor and patient to link messages together
         // converted both hashes to strings
-        String senderHash = getHashCode(sender) + "";
-        String receiverHash = getHashCode(receiver) + "";
+        String doctorHash = getHashCode(doctor) + "";
+        String patientHash = getHashCode(patient) + "";
         // file name for the file
-        String fileName = fileDir + senderHash + receiverHash + ".txt";
+        String fileName = fileDir + doctorHash + patientHash + ".txt";
 
         messageFile = new File(fileName);
         // this checks if the file already exists
