@@ -19,13 +19,13 @@ public class MessageHandler {
 
     // creates a new file and writes the message between the doctor and the patient
     // to it
-    public void createNewMessage(Doctor doctor, Patient patient, String message) throws IOException {
+    public void createNewMessage(Object sender, Object reciever, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         int fileNum = 0;
         // using hash code for doctor and patient to link messages together
-        int hashCode = Objects.hash(doctor, patient);
+        int hashCode = Objects.hash(sender, reciever);
 
         String fileName = hashCode + ".txt";
 
