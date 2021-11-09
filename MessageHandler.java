@@ -17,17 +17,27 @@ public class MessageHandler {
 
     }
 
-    // creates a new file and writes the message between the doctor and the patient
-    // to it
+    /**
+     * This method creates a new <code>File</code> that will hold the contents of
+     * the message between the sender and the receiver
+     * 
+     * @param sender   - the object that is sending the message (i.e. Doctor or
+     *                 Patient)
+     * @param receiver - the object that is receiving the message (i.e. Patient or
+     *                 Doctor)
+     * @param message  - the message itself
+     * @throws IOException
+     */
     public void createNewMessage(Object sender, Object receiver, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         int fileNum = 0;
         // using hash code for doctor and patient to link messages together
-        String senderHash = getHashSender(sender) + "";
-        String receiverHash = getHashReceiver(receiver) + "";
-
+        // converted both hashes to strings
+        String senderHash = getHashCode(sender) + "";
+        String receiverHash = getHashCode(receiver) + "";
+        // file name for the file
         String fileName = senderHash + receiverHash + ".txt";
 
         messageFile = new File(fileName);
@@ -105,13 +115,14 @@ public class MessageHandler {
         return fileToReturn;
     }
 
-    public int getHashSender(Object sender) {
-        int hashCode = Objects.hashCode(sender);
-        return hashCode;
-    }
-
-    public int getHashReceiver(Object receiver) {
-        int hashCode = Objects.hashCode(receiver);
+    /**
+     * This method returns the hashcode for the object
+     * 
+     * @param object - the object that is sending the message
+     * @return the hashcode for the sender
+     */
+    public int getHashCode(Object object) {
+        int hashCode = Objects.hashCode(object);
         return hashCode;
     }
 }
