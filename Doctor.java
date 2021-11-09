@@ -28,8 +28,14 @@ public class Doctor {
         checkoutPatient();
     }
 
-    public void messagePatient(Patient patient) {
+    public void messagePatient(Patient patient, String message) {
         // uses messageHandler to message Patient
+        try {
+            messageHandler.createNewMessage(this, currentPatient, message);
+        } catch (Exception e) {
+            System.out.println("there was a problem creating a message from doctor to current patient");
+            e.printStackTrace();
+        }
     }
 
     private void checkoutPatient() {
