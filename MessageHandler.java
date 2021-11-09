@@ -19,8 +19,10 @@ public class MessageHandler {
     }
 
     /**
-     * This method creates a new <code>File</code> that will hold the contents of
-     * the message between the sender and the receiver
+     * This method will either create a new <code>File</code> that will hold the
+     * contents of the message between the Doctor and Patient or write to an
+     * existing <code>File</code> that holds previous messages between Doctor and
+     * Patient
      * 
      * @param sender   - the object that is sending the message (i.e. Doctor or
      *                 Patient)
@@ -29,11 +31,10 @@ public class MessageHandler {
      * @param message  - the message itself
      * @throws IOException
      */
-    public void createNewMessage(Object sender, Object receiver, String message) throws IOException {
+    public void writeMessage(Object sender, Object receiver, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
-        int fileNum = 0;
         // using hash code for doctor and patient to link messages together
         // converted both hashes to strings
         String senderHash = getHashCode(sender) + "";
@@ -42,27 +43,37 @@ public class MessageHandler {
         String fileName = fileDir + senderHash + receiverHash + ".txt";
 
         messageFile = new File(fileName);
-        // this checks if the file name already exists
-        if (messageFile.exists()) { // && !messageFile.isDirectory()) {
-            // if the file name already exists, simply add a number at the end of it
-            while (messageFile.exists()) {
-                fileNum++;
-                // new file name: 11234567890.txt
-                messageFile = new File(fileNum + fileName);
-            }
+        // this checks if the file already exists
+        if (messageFile.exists()) {
+            // if file already exists, no need to create a new file
+            // simply append message to existing file
+
+            // filewriter in append mode
+            fileWriter = new FileWriter(messageFile, true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+
+            // create a new line after previous message and write new message to file
+            bufferedWriter.newLine();
+            bufferedWriter.write(message);
+
+            // close writer to prevent leak
+            bufferedWriter.close();
+            System.out.println(fileName + " updated");
+        } else {
+            // create new file with that file name
+            messageFile.createNewFile();
+
+            // writing to new file
+            fileWriter = new FileWriter(messageFile);
+            bufferedWriter = new BufferedWriter(fileWriter);
+
+            // write the message to the file
+            bufferedWriter.write(message);
+
+            // close writer to prevent leak
+            bufferedWriter.close();
+            System.out.println("new file writing done at: " + fileName);
         }
-        // create new file with that file name
-        messageFile.createNewFile();
-
-        // writing the file here
-        fileWriter = new FileWriter(messageFile);
-        bufferedWriter = new BufferedWriter(fileWriter);
-        // write the message to the file
-        bufferedWriter.write(message);
-
-        // close writer to prevent leak
-        bufferedWriter.close();
-        System.out.println("File writing done");
     }
 
     /**
