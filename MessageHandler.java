@@ -19,15 +19,16 @@ public class MessageHandler {
 
     // creates a new file and writes the message between the doctor and the patient
     // to it
-    public void createNewMessage(Object sender, Object reciever, String message) throws IOException {
+    public void createNewMessage(Object sender, Object receiver, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         int fileNum = 0;
         // using hash code for doctor and patient to link messages together
-        int hashCode = Objects.hash(sender, reciever);
+        String senderHash = getHashSender(sender) + "";
+        String receiverHash = getHashReceiver(receiver) + "";
 
-        String fileName = hashCode + ".txt";
+        String fileName = senderHash + receiverHash + ".txt";
 
         messageFile = new File(fileName);
         // this checks if the file name already exists
@@ -102,5 +103,15 @@ public class MessageHandler {
         }
 
         return fileToReturn;
+    }
+
+    public int getHashSender(Object sender) {
+        int hashCode = Objects.hashCode(sender);
+        return hashCode;
+    }
+
+    public int getHashReceiver(Object receiver) {
+        int hashCode = Objects.hashCode(receiver);
+        return hashCode;
     }
 }
