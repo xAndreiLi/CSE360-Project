@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -23,8 +24,11 @@ public class MessageHandler {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
-        String fileName = "message.txt";
         int fileNum = 0;
+        // using hash code for doctor and patient to link messages together
+        int hashCode = Objects.hash(doctor, patient);
+
+        String fileName = hashCode + ".txt";
 
         messageFile = new File(fileName);
         // this checks if the file name already exists
@@ -32,7 +36,8 @@ public class MessageHandler {
             // if the file name already exists, simply add a number at the end of it
             while (messageFile.exists()) {
                 fileNum++;
-                messageFile = new File("message" + fileNum + ".txt");
+                // new file name: 12345678901.txt
+                messageFile = new File(fileName + fileNum + ".txt");
             }
         }
         // create new file with that file name
