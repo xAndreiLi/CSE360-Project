@@ -19,7 +19,6 @@ public class MessageHandler {
 
     // creates a new file and writes the message between the doctor and the patient
     // to it
-    // TODO: need to figure out how to link the message to the doctor and patient
     public void createNewMessage(Doctor doctor, Patient patient, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
