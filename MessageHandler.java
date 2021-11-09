@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class MessageHandler {
     Doctor doctor;
     Patient patient;
+    String fileDir = "Messages/";
 
     // default constructor
     public MessageHandler() {
@@ -38,16 +39,16 @@ public class MessageHandler {
         String senderHash = getHashCode(sender) + "";
         String receiverHash = getHashCode(receiver) + "";
         // file name for the file
-        String fileName = senderHash + receiverHash + ".txt";
+        String fileName = fileDir + senderHash + receiverHash + ".txt";
 
         messageFile = new File(fileName);
         // this checks if the file name already exists
-        if (messageFile.exists() && !messageFile.isDirectory()) {
+        if (messageFile.exists()) { // && !messageFile.isDirectory()) {
             // if the file name already exists, simply add a number at the end of it
             while (messageFile.exists()) {
                 fileNum++;
-                // new file name: 12345678901.txt
-                messageFile = new File(fileName + fileNum + ".txt");
+                // new file name: 11234567890.txt
+                messageFile = new File(fileNum + fileName);
             }
         }
         // create new file with that file name
@@ -65,8 +66,8 @@ public class MessageHandler {
     }
 
     /**
-     * This method reads existing messages. If there is no message found, it throws
-     * an exception
+     * This method reads existing files from the Messages/ folder. If there is no
+     * message found, it throws an exception
      * 
      * @param filename - the name of the file
      * @throws FileNotFoundException exception
@@ -76,7 +77,7 @@ public class MessageHandler {
         Scanner reader;
         String data;
 
-        messageFile = findMessage(filename);
+        messageFile = findMessage(fileDir + filename);
 
         if (messageFile == null) {
             // UH OH THERE IS NO EXISTING MESSAGE
