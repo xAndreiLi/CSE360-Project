@@ -84,20 +84,28 @@ public class MessageHandler {
     public void readMessage(String filename) throws FileNotFoundException {
         File messageFile;
         Scanner reader;
-        String data;
+        String line, flag, message;
 
         messageFile = findMessage(fileDir + filename);
 
         if (messageFile == null) {
             // UH OH THERE IS NO EXISTING MESSAGE
-            System.out.println("Cannot find message: " + messageFile);
+            System.out.println("Cannot find message at: " + messageFile);
         } else {
             reader = new Scanner(messageFile);
 
             while (reader.hasNextLine()) {
-                data = reader.nextLine();
-                // do something with data
-                System.out.println(data);
+                line = reader.nextLine();
+                flag = line.substring(0, 2);
+                message = line.substring(2);
+
+                if (flag.contains("D:")) {
+                    // this is the doctor message
+                } else if (flag.contains("P:")) {
+                    // this is the patient message
+                }
+                // test print line
+                System.out.println(line);
             }
 
             reader.close();
