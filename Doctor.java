@@ -30,8 +30,9 @@ public class Doctor {
 
     public void messagePatient(Patient patient, String message) {
         // uses messageHandler to message Patient
+        String messageToSend = "D:" + message;
         try {
-            messageHandler.writeMessage(this, currentPatient, message);
+            messageHandler.writeMessage(this, patient, messageToSend);
         } catch (Exception e) {
             System.out.println("there was a problem creating a message from doctor to current patient");
             e.printStackTrace();
