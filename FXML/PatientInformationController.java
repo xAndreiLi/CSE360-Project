@@ -37,4 +37,16 @@ public class PleaseProvideControllerClassName {
     @FXML
     private Text displayPhone;
 
+    @FXML
+    private Text patiInfoImmunHistory;
+
+    @FXML
+    private Text patiInfoPrefPharmacy;
+
+    @FXML
+    private Text patiInfoPrescribedMed;
+
+    @FXML
+    private Text patiInfoPrevHealthIssue;
+
 }

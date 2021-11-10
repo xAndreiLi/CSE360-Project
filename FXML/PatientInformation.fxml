@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
@@ -17,6 +18,7 @@
                   <Font name="ArtifaktElement-Light" size="23.0" />
                </font>
             </Text>
+            <Button fx:id="PatiInfoBack" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
          </children>
       </Pane>
       <VBox prefHeight="350.0" prefWidth="360.0">
@@ -136,10 +138,22 @@
                               </VBox>
                               <VBox prefHeight="142.0" prefWidth="186.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" />
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" />
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" />
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" />
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <Text fx:id="patiInfoPrevHealthIssue" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
+                                       </children></Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <Text fx:id="patiInfoPrescribedMed" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
+                                       </children></Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <Text fx:id="patiInfoImmunHistory" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
+                                       </children></Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <Text fx:id="patiInfoPrefPharmacy" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
+                                       </children></Pane>
                                  </children>
                               </VBox>
                            </children>
