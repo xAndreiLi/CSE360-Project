@@ -12,6 +12,7 @@ public class MessageHandler {
     Doctor doctor;
     Patient patient;
     String fileDir = "Messages/";
+    String[][] messageArray;
 
     // default constructor
     public MessageHandler() {
@@ -79,12 +80,13 @@ public class MessageHandler {
      * message found, it throws an exception
      * 
      * @param filename - the name of the file
-     * @throws FileNotFoundException exception
+     * @throws IOException
      */
-    public void readMessage(String filename) throws FileNotFoundException {
+    public void readMessage(String filename) throws IOException {
         File messageFile;
         Scanner reader;
         String line, flag, message;
+        int numOfLines = 0, rowNum = 0;
 
         messageFile = findMessage(fileDir + filename);
 
@@ -92,21 +94,25 @@ public class MessageHandler {
             // UH OH THERE IS NO EXISTING MESSAGE
             System.out.println("Cannot find message at: " + messageFile);
         } else {
+            // count number of lines
+            numOfLines = countLines(fileDir + filename);
             reader = new Scanner(messageFile);
+
+            // make an array to store the messages
+            // array has row = numOfLines and col = 2
+            messageArray = new String[numOfLines][2];
 
             while (reader.hasNextLine()) {
                 line = reader.nextLine();
                 flag = line.substring(0, 2);
                 message = line.substring(2);
-
-                if (flag.contains("D:")) {
-                    // this is the doctor message
-                } else if (flag.contains("P:")) {
-                    // this is the patient message
-                }
-                // test print line
-                System.out.println(line);
+                // store in array
+                messageArray[rowNum][0] = flag;
+                messageArray[rowNum][1] = message;
+                rowNum++;
             }
+
+            // TODO do something with array
 
             reader.close();
         }
@@ -142,5 +148,23 @@ public class MessageHandler {
     public int getHashCode(Object object) {
         int hashCode = Objects.hashCode(object);
         return hashCode;
+    }
+
+    /**
+     * This helper method is to read the number of lines in a file
+     * 
+     * @param filename - the name of the file
+     * @return the number of lines in a file
+     */
+    private int countLines(String filename) throws IOException {
+        int count = 0;
+        BufferedReader reader = new BufferedReader(new FileReader(filename));
+
+        while (reader.readLine() != null) {
+            count++;
+        }
+
+        reader.close();
+        return count;
     }
 }
