@@ -38,7 +38,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="editVitalsButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Edit Vitals" />
+                  <Button fx:id="editVitalsButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Physical" />
                </children>
             </Pane>
             <Pane prefHeight="350.0" prefWidth="200.0">

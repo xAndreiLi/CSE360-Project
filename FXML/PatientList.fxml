@@ -24,11 +24,10 @@
          <children>
             <TableView prefHeight="350.0" prefWidth="600.0">
               <columns>
-                <TableColumn fx:id="patiListName" prefWidth="156.0" text="Name" />
-                <TableColumn fx:id="patiListBirthDate" prefWidth="101.0" text="Birth Date" />
-                  <TableColumn fx:id="patiListInfo" prefWidth="103.0" text="Patient Info" />
-                  <TableColumn fx:id="patiListPharmacy" prefWidth="158.0" text="Pharmacy" />
-                  <TableColumn fx:id="patiListRoom" prefWidth="81.0" text="Room" />
+                <TableColumn fx:id="patiListName" prefWidth="206.0" text="Name" />
+                <TableColumn fx:id="patiListBirthDate" prefWidth="131.0" text="Birth Date" />
+                  <TableColumn fx:id="patiListPharmacy" prefWidth="183.0" text="Pharmacy" />
+                  <TableColumn fx:id="patiListRoom" prefWidth="79.0" text="Room" />
               </columns>
             </TableView>
          </children>
