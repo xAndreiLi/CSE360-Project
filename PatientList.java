@@ -32,7 +32,7 @@ public class PatientList {
             e.printStackTrace();
         } //end Catch
 }
-    
+    //Will most like scrapped when arrayList is created
     public void savePatient(Patient pat) {
         String fileName = pat.getPatientFullName() + ".txt";
         WriteObjectToFile(pat, fileName);
@@ -46,6 +46,9 @@ public class PatientList {
             e.printStackTrace();
     }
 }
+    public void loadPatient(Patient pat){
+         
+    }
 
     //This method will be used to LOAD objects from file
     //Will need to create a loop in the main to read off a seperate text file to 
