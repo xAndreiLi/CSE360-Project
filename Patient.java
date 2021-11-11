@@ -14,7 +14,7 @@ public class Patient {
             emerFName, emerLName, emerEmail, emergenNumber, medication; // Emergency Contact Info
     Doctor currentDoctor;
     MessageHandler messageHandler;
-    String[] dateOfBirth, visitReason;
+    String[] patientHistoryArray, dateOfBirth, visitReason;
     public Queue<String> patientHistory = new LinkedList<>();
 
     // Patient Operations
@@ -37,7 +37,7 @@ public class Patient {
         this.height = "0 ' 0";
         this.bodyTemp = 0;
         this.bloodPres = 0;
-
+        this.patientHistoryArray = new String[10];
     }
 
     public Patient(String fName, String lName, String[] birthday, String[] visitReason, String email, String phoneNum,
@@ -57,7 +57,7 @@ public class Patient {
         this.height = "0 ' 0";
         this.bodyTemp = 0;
         this.bloodPres = 0;
-
+        this.patientHistoryArray = new String[10];
     }
 
     // This function will be used by the Patients to mesage their doctors
@@ -82,8 +82,8 @@ public class Patient {
         return success;
     }
 
-    Queue<String> getPatientHistory() {
-        return this.patientHistory;
+    String[] getPatientHistoryArray() {
+        return this.patientHistoryArray;
     }
 
     void updateVitals(float weight, String height, float bodyTemp, float bloodPres) {

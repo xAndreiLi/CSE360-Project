@@ -90,6 +90,9 @@ public class Doctor {
                 currentPatient.patientHistory.poll();
             }
         }
+
+        // update the patient history array for display purposes
+        currentPatient.patientHistory.toArray(currentPatient.patientHistoryArray);
     }
 
     private void prescribeMedication(String medication) {
