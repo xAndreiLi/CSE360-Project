@@ -1,6 +1,7 @@
 
 public class Nurse {
 	//work done by Long Ly
+    
     //Nurse responsibities
     /*
     Current Patient
@@ -41,12 +42,14 @@ public class Nurse {
     }//end of viewPatientList
 
     private void addNewPatientToList(Patient patient){
+        //TO BE WORKED ON
         //ADDS PATIENT TO PATIENTLIST
 
     }//end of addNewPatientToList
 
     private void removePatientFromList(Patient patient){
-        //REMOVE PATIENT FROM PATIENTLIST
+        //TO BE WORKED ON
+        //REMOVES PATIENT FROM PATIENTLIST
 
     }//removePatientFromList
    
