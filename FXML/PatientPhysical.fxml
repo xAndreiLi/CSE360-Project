@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="611.0" style="-fx-background-color: #335a63;">
+         <children>
+            <Text fill="#f5f5f5" layoutX="196.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Physical" textAlignment="CENTER" wrappingWidth="208.685546875">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="backPatientPhysical" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+         </children>
+      </Pane>
+      <Pane prefHeight="350.0" prefWidth="300.0">
+         <children>
+            <TextArea fx:id="prescribedMedication" layoutX="23.0" layoutY="182.0" prefHeight="128.0" prefWidth="277.0" promptText="Medication to prescribe" />
+            <Button fx:id="submitMedPrescription" layoutX="344.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Submit" />
+            <DatePicker fx:id="patiPhysicalDate" layoutX="344.0" layoutY="204.0" promptText="Enter Date" />
+            <TextArea fx:id="patientSummary" layoutX="23.0" layoutY="14.0" prefHeight="148.0" prefWidth="554.0" promptText="Enter patient summary" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
