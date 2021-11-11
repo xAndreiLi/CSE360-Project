@@ -1,7 +1,7 @@
 //worked on by Hy Nguyen
 
 // 11-11-2021
-// Still need to work on the patient History
+// Should be all finsihed. Just need to test and debug as a whole
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -58,6 +58,8 @@ public class Patient {
         this.bloodPres = 0;
         this.patientHistoryArray = new String[10];
     }
+
+    
 
     // This function will be used by the Patients to mesage their doctors
     // It'll take in a Doctor as the receiptient of the message, and the message
