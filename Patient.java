@@ -1,7 +1,6 @@
 //worked on by Hy Nguyen
 
-// 11-05-2021
-// Still waiting on the Message Handler to set up operations. 
+// 11-11-2021
 // Still need to work on the patient History
 import java.util.LinkedList;
 import java.util.Queue;
