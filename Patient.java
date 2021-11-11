@@ -63,13 +63,20 @@ public class Patient {
     // This function will be used by the Patients to mesage their doctors
     // It'll take in a Doctor as the receiptient of the message, and the message
     // itself
-    void messageDoctor(Doctor dr, String messString) {
-        // To be worked on!!
+    public void messageDoctor(Doctor doc, String messString) {
+        // Uses messageHand
+        String messageToSend = "Patient " + this.patientFName + ": " + messString;
+        try{
+            messageHandler.writeMessage(doc, this, messageToSend);
+        } catch (Exception e) {
+            System.out.println("there was a problem creating a message from doctor to current patient");
+            e.printStackTrace();
+        }
     }
 
     // This message will be used to update a patient contact information.
     // It will return a boolean if information is updated
-    boolean changeContactInformation(String email, String phoneNum) {
+    public boolean changeContactInformation(String email, String phoneNum) {
         boolean success = false;
         if (email != "") {
             this.patientEmail = email;
@@ -82,79 +89,79 @@ public class Patient {
         return success;
     }
 
-    String[] getPatientHistoryArray() {
+    public String[] getPatientHistoryArray() {
         return this.patientHistoryArray;
     }
 
-    void updateVitals(float weight, String height, float bodyTemp, float bloodPres) {
+    public void updateVitals(float weight, String height, float bodyTemp, float bloodPres) {
         this.weight = weight;
         this.height = height;
         this.bodyTemp = bodyTemp;
         this.bloodPres = bloodPres;
     }
 
-    void assignDoctor(Doctor doctor) {
+    public void assignDoctor(Doctor doctor) {
         this.currentDoctor = doctor;
     }
 
-    void assignMedication(String medication) {
+    public void assignMedication(String medication) {
         this.medication = medication;
     }
 
     // Getters for the View Own Patient Info
-    float getWeight() {
+    public float getWeight() {
         return this.weight;
     }
 
-    float getBodyTemp() {
+    public float getBodyTemp() {
         return this.bodyTemp;
     }
 
-    float getbloodPres() {
+    public float getbloodPres() {
         return this.bloodPres;
     }
 
-    String getPatientEmail() {
+    public String getPatientEmail() {
         return this.patientEmail;
     }
 
-    String getPatientFirstName() {
+    public String getPatientFirstName() {
         return this.patientFName;
     }
 
-    String getPatientLastName() {
+    public String getPatientLastName() {
         return this.patientLName;
     }
 
-    String getPatientFullName() {
+    public String getPatientFullName() {
         return this.patientFName + " " + this.patientLName;
     }
 
-    String getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.patientNumber;
     }
 
-    String getHeight() {
+    public String getHeight() {
         return this.height;
     }
 
-    String getEmergencyFirstName() {
+    public String getEmergencyFirstName() {
         return this.emerFName;
     }
 
-    String getEmergencyLastName() {
+    public String getEmergencyLastName() {
         return this.emerLName;
     }
 
-    String getEmergencyFullName() {
+    public String getEmergencyFullName() {
         return this.emerFName + " " + this.emerLName;
     }
 
-    String getEmergencyEmail() {
+    public String getEmergencyEmail() {
         return this.emerEmail;
     }
 
-    String getEmergencyPhoneNumb() {
+    public String getEmergencyPhoneNumb() {
         return this.emergenNumber;
     }
 
