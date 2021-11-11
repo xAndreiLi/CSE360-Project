@@ -5,7 +5,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Patient {
+public class Patient implements Serilizable{
 
     // Patient Attributes
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
