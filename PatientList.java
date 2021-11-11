@@ -37,8 +37,9 @@ public class PatientList {
         String fileName = pat.getPatientFullName() + ".txt";
         WriteObjectToFile(pat, fileName);
         try{
-            myWriter = new FileWriter(saveFile);
+            myWriter = new FileWriter(saveFile, true);
             myWriter.write(fileName);
+            myWriter.write("\n");
             myWriter.close();
         } catch (IOException e) {
             System.out.println("An error occurred.");
