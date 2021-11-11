@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,10 +12,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LogInController implements Initializable{
+public class CreateAccountController implements Initializable{
 
     @FXML
-    private Button createAccountReq;
+    private Button AccouCreationBack;
 
     @FXML
     private TextField passwordLogin;
@@ -28,12 +27,12 @@ public class LogInController implements Initializable{
     private TextField usernameLogin;
 
     @FXML
-    void handleCreateAccountButtonAction(ActionEvent event) throws IOException{
+    void handleBackButton(ActionEvent event) throws IOException{
         Stage stage;
 		Parent root;
 		//System.out.println("Pressed"); //for dubugging
-		stage = (Stage) createAccountReq.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/createAccount.fxml"));
+		stage = (Stage) AccouCreationBack.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("FXML/LoginScreen.fxml"));
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
