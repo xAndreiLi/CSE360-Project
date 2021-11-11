@@ -23,7 +23,7 @@ public class Nurse {
 
     //I don't think nurses have their own id or names
     public Nurse(){
-        messageHandler = New MessageHandler();
+        //messageHandler = New MessageHandler();
         
     }//end of Nurse Constructor
     
