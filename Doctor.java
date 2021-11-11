@@ -26,11 +26,13 @@ public class Doctor {
         this.doctorID = doctorID;
     }
 
-    public void examinePatient(String patientSummary, String medication) {
+    public void examinePatient(String patientSummary, String medication, String date) {
         // examines currentPatient here
 
+        String visitSummary = date + ": " + patientSummary;
+
         prescribeMedication(medication);
-        checkoutPatient(patientSummary);
+        checkoutPatient(visitSummary);
     }
 
     public void messagePatient(Patient patient, String message) {
@@ -74,18 +76,20 @@ public class Doctor {
 
     // HELPER METHODS
 
-    private void checkoutPatient(String patientSummary) {
+    private void checkoutPatient(String summary) {
         // updates patient history with any notes
         // patient history[] will show the last 10 visits
-        int index = 0;
 
-        for (int i = 0; i < currentPatient.getPatientHistory().length; i++) {
-            if (currentPatient.getPatientHistory()[i] != "") {
+        // add patient summary into queue
+        currentPatient.patientHistory.add(summary);
 
+        // check if queue is over 10
+        if (currentPatient.patientHistory.size() > 10) {
+            // if it is over 10, we keep removing elements until the size is 10
+            while (currentPatient.patientHistory.size() > 10) {
+                currentPatient.patientHistory.poll();
             }
         }
-
-        currentPatient.getPatientHistory()[0] = patientSummary;
     }
 
     private void prescribeMedication(String medication) {
