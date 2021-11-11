@@ -92,7 +92,7 @@ public class Doctor {
         }
 
         // update the patient history array for display purposes
-        currentPatient.patientHistory.toArray(currentPatient.patientHistoryArray);
+        currentPatient.patientHistoryArray = currentPatient.patientHistory.toArray(currentPatient.patientHistoryArray);
     }
 
     private void prescribeMedication(String medication) {
