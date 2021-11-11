@@ -5,21 +5,25 @@
  */
 public class Doctor {
 
-    public Patient currentPatient;
-
     // TODO: something something patient list
 
     private MessageHandler messageHandler;
+    private Patient currentPatient;
+    private String doctorFirstName;
     private int doctorID;
 
     // default constructor
     public Doctor() {
         messageHandler = new MessageHandler();
         doctorID = 0;
+        doctorFirstName = "John";
     }
 
-    public void setPatient(Patient patient) {
-        currentPatient = patient;
+    // overload constructor
+    public Doctor(String doctorFirstName, int doctorID) {
+        messageHandler = new MessageHandler();
+        this.doctorFirstName = doctorFirstName;
+        this.doctorID = doctorID;
     }
 
     public void examinePatient() {
@@ -32,7 +36,7 @@ public class Doctor {
 
     public void messagePatient(Patient patient, String message) {
         // uses messageHandler to message Patient
-        String messageToSend = "D:" + message;
+        String messageToSend = "Doctor " + doctorFirstName + ": " + message;
         try {
             messageHandler.writeMessage(this, patient, messageToSend);
         } catch (Exception e) {
@@ -41,13 +45,35 @@ public class Doctor {
         }
     }
 
+    // GETTER METHODS
+
+    public Patient getCurrentPatient() {
+        return this.currentPatient;
+    }
+
+    public String getDoctorFirstName() {
+        return this.doctorFirstName;
+    }
+
     public int getDoctorID() {
         return this.doctorID;
     }
 
-    public void setDoctorID(int num) {
-        this.doctorID = num;
+    // SETTER METHODS
+
+    public void setCurrentPatient(Patient currentPatient) {
+        this.currentPatient = currentPatient;
     }
+
+    public void setDoctorFirstName(String doctorFirstName) {
+        this.doctorFirstName = doctorFirstName;
+    }
+
+    public void setDoctorID(int doctorID) {
+        this.doctorID = doctorID;
+    }
+
+    // HELPER METHODS
 
     private void checkoutPatient() {
         // updates patient history
