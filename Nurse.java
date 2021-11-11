@@ -1,6 +1,7 @@
 
 public class Nurse {
 	//work done by Long Ly
+    //MAINLY DONE NEED PATIENT LIST TO FINISH
     
     //Nurse responsibities
     /*
@@ -18,24 +19,36 @@ public class Nurse {
     private Patient patient;
     private Doctor[] doctors;
     private PatientList patientList;
-    private MessageHandler messagehandler;
+    private MessageHandler messageHandler;
 
+    //I don't think nurses have their own id or names
     public Nurse(){
-        this.patient = NULL;
-        this.doctors = NULL;
-        this.patientList = NULL;
+        messageHandler = New MessageHandler();
         
     }//end of Nurse Constructor
-
+    
+    public void appointDoctorToPatient(Doctor doctor){
+        this.patient.assignDoctor(doctor);
+    }
 
     //updating Patient Vitals from Patient class
-    public void updatePatientVitals(float weight, String height, float bodytemp, float bloodPres){
+    //Also appoints paitent to doctor at the same time
+    public void updatePatientVitals(float weight, String height, float bodytemp, float bloodPres, Doctor doctor){
         this.patient.updateVitals(weight, height, bodytemp, bloodPres);
+        appointDoctorToPatient(doctor);
+        
     }//end of updatePaitentVitals
 
-    public void recordPatientMeasurements(Patient patient){ 
-        //may be replaced by updatePatientVitals
-    }//end of recordPatientMeasurements
+    //  
+
+    public void setCurrentPatient(Patient patient){
+        this.patient = patient;
+    }
+
+    //
+    public String[] patientHistory(){
+        return this.patient.getPatientHistoryArray();
+    }
 
     private void viewPatientList(){
         //TO BE WORKED ON
