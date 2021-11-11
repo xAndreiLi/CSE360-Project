@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #335a63;">
+         <children>
+            <Text fill="#f5f5f5" layoutX="184.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient List" textAlignment="CENTER" wrappingWidth="233.0">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="patiListBack" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+         </children>
+      </Pane>
+      <Pane prefHeight="350.0" prefWidth="600.0">
+         <children>
+            <TableView prefHeight="350.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="patiListName" prefWidth="156.0" text="Name" />
+                <TableColumn fx:id="patiListBirthDate" prefWidth="101.0" text="Birth Date" />
+                  <TableColumn fx:id="patiListInfo" prefWidth="119.0" text="Patient messaging" />
+                  <TableColumn fx:id="patiListPharmacy" prefWidth="142.0" text="Pharmacy" />
+                  <TableColumn fx:id="patiListRoom" prefWidth="81.0" text="Room" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</VBox>
