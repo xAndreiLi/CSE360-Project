@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,15 +43,38 @@ public class LogInController implements Initializable{
     void takeInUserNameAndPassword(ActionEvent event) throws IOException
     {
         Stage stage;
-        Parent rootParent;
+        FXMLLoader loader;
         System.out.println("pressed logIn button");
         String userName = usernameLogin.getText();
         String password = passwordLogin.getText();
 
-        if(userName ==  && password == )
+        if(true) // Username and password match in file
         {
             stage = (Stage) signIn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource(""))
+            if(true) // If account has patient type
+            {
+                loader = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
+                PatientInfoController controller = loader.getController();
+            }
+            else if(true) // If account has nurse type
+            {
+                loader = FXMLLoader.load(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
+                NursePageController controller = loader.getController();
+                controller.setNurse();
+            }
+            else if(true) // If account has doctor type
+            {
+                loader = FXMLLoader.load(getClass().getResource("FXML/DoctorSelectPatient.fxml"));
+                DoctorPageController controller = loader.getController();
+            }
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            // Set log text to invalid credentials
         }
 
     }

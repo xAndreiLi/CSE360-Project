@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="CreateAccountController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #335a63;">
          <children>
@@ -18,7 +18,7 @@
                   <Font name="ArtifaktElement-Light" size="23.0" />
                </font>
             </Text>
-            <Button fx:id="AccouCreationBack" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+            <Button fx:id="AccouCreationBack" onAction="#handleBackButton" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
          </children>
       </Pane>
       <HBox prefHeight="319.0" prefWidth="600.0">
@@ -57,9 +57,14 @@
                         <Font name="ArtifaktElement-Light" size="12.0" />
                      </font>
                   </TextField>
+<<<<<<< HEAD
                   <TextField fx:id="phoneNumber" layoutX="226.0" layoutY="75.0" prefHeight="25.0" prefWidth="149.0" promptText="Phone Number" />
                   <DatePicker fx:id="dateOfBirth" layoutX="226.0" layoutY="29.0" prefHeight="25.0" prefWidth="149.0" promptText="MM/DD/YYYY" />
                   <Button fx:id="creatAccount" layoutX="226.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Create Account ">
+=======
+                  <DatePicker fx:id="dateOfBirth" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="149.0" promptText="MM/DD/YYYY" />
+                  <Button fx:id="createAccount" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Create Account ">
+>>>>>>> main
                      <font>
                         <Font name="ArtifaktElement-Light" size="12.0" />
                      </font>
