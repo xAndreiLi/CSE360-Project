@@ -1,9 +1,11 @@
+import java.io.Serializable;
+
 /**
  * Doctor class is responsible for examining Patient objects
  * 
  * @author Randy Pham
  */
-public class Doctor {
+public class Doctor implements Serializable{
 
     // TODO: something something patient list
 

@@ -2,10 +2,11 @@
 
 // 11-11-2021
 // Should be all finsihed. Just need to test and debug as a whole
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Patient {
+public class Patient implements Serializable {
 
     // Patient Attributes
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
