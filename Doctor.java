@@ -10,10 +10,12 @@ public class Doctor {
     // TODO: something something patient list
 
     private MessageHandler messageHandler;
+    private int doctorID;
 
     // default constructor
     public Doctor() {
         messageHandler = new MessageHandler();
+        doctorID = 0;
     }
 
     public void setPatient(Patient patient) {
@@ -37,6 +39,14 @@ public class Doctor {
             System.out.println("there was a problem creating a message from doctor to current patient");
             e.printStackTrace();
         }
+    }
+
+    public int getDoctorID() {
+        return this.doctorID;
+    }
+
+    public void setDoctorID(int num) {
+        this.doctorID = num;
     }
 
     private void checkoutPatient() {
