@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,7 +43,7 @@ public class LogInController implements Initializable{
     void takeInUserNameAndPassword(ActionEvent event) throws IOException
     {
         Stage stage;
-        Parent root;
+        FXMLLoader loader;
         System.out.println("pressed logIn button");
         String userName = usernameLogin.getText();
         String password = passwordLogin.getText();
@@ -54,18 +53,22 @@ public class LogInController implements Initializable{
             stage = (Stage) signIn.getScene().getWindow();
             if(true) // If account has patient type
             {
-                root = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
+                loader = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
+                PatientInfoController controller = loader.getController();
             }
             else if(true) // If account has nurse type
             {
-                root = FXMLLoader.load(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
+                loader = FXMLLoader.load(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
+                NursePageController controller = loader.getController();
+                controller.setNurse();
             }
             else if(true) // If account has doctor type
             {
-                root = FXMLLoader.load(getClass().getResource("FXML/DoctorSelectPatient.fxml"));
+                loader = FXMLLoader.load(getClass().getResource("FXML/DoctorSelectPatient.fxml"));
+                DoctorPageController controller = loader.getController();
             }
 
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.show();
         }
