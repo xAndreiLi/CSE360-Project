@@ -26,12 +26,11 @@ public class Doctor {
         this.doctorID = doctorID;
     }
 
-    public void examinePatient() {
+    public void examinePatient(String patientSummary, String medication) {
         // examines currentPatient here
-        String medication = "";
 
         prescribeMedication(medication);
-        checkoutPatient();
+        checkoutPatient(patientSummary);
     }
 
     public void messagePatient(Patient patient, String message) {
@@ -75,8 +74,8 @@ public class Doctor {
 
     // HELPER METHODS
 
-    private void checkoutPatient() {
-        // updates patient history
+    private void checkoutPatient(String patientSummary) {
+        // updates patient history with any notes
     }
 
     private void prescribeMedication(String medication) {
