@@ -76,6 +76,16 @@ public class Doctor {
 
     private void checkoutPatient(String patientSummary) {
         // updates patient history with any notes
+        // patient history[] will show the last 10 visits
+        int index = 0;
+
+        for (int i = 0; i < currentPatient.getPatientHistory().length; i++) {
+            if (currentPatient.getPatientHistory()[i] != "") {
+
+            }
+        }
+
+        currentPatient.getPatientHistory()[0] = patientSummary;
     }
 
     private void prescribeMedication(String medication) {
