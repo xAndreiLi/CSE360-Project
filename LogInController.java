@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,11 +31,14 @@ public class LogInController implements Initializable{
     void handleCreateAccountButtonAction(ActionEvent event) throws IOException{
         Stage stage;
 		Parent root;
-		//System.out.println("Pressed"); //for dubugging
+		System.out.println("Pressed"); //for dubugging
 		stage = (Stage) createAccountReq.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/createAccount.fxml"));
+        System.out.println("stage set");
 
+		root = FXMLLoader.load(getClass().getResource("FXML/createAccount.fxml"));
+        System.out.println("did i make it this far?");
 		Scene scene = new Scene(root);
+
 		stage.setScene(scene);
 		stage.show();
     }
@@ -60,7 +64,7 @@ public class LogInController implements Initializable{
             {
                 loader = FXMLLoader.load(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
                 NursePageController controller = loader.getController();
-                controller.setNurse();
+                //controller.setNurse();
             }
             else if(true) // If account has doctor type
             {
@@ -78,7 +82,7 @@ public class LogInController implements Initializable{
         }
 
     }
-
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
