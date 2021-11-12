@@ -59,7 +59,7 @@
                   </TextField>
                   <TextField fx:id="phoneNumber" layoutX="226.0" layoutY="75.0" prefHeight="25.0" prefWidth="149.0" promptText="Phone Number" />
                   <DatePicker fx:id="dateOfBirth" layoutX="226.0" layoutY="29.0" prefHeight="25.0" prefWidth="149.0" promptText="MM/DD/YYYY" />
-                  <Button fx:id="creatAccount" layoutX="226.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Create Account ">
+                  <Button fx:id="creatAccount" onAction="#handleCreateAccount" layoutX="226.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Create Account ">
                      <font>
                         <Font name="ArtifaktElement-Light" size="12.0" />
                      </font>

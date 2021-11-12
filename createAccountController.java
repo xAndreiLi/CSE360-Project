@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -9,18 +10,47 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class CreateAccountController implements Initializable{
+public class createAccountController implements Initializable{
 
     @FXML
     private Button AccouCreationBack;
-
     @FXML
-    private Button createAccount;
-
+    private TextField EmerContEmail;
     @FXML
+    private TextField EmerContLastName;
+    @FXML
+    private TextField EmerContPhone;
+    @FXML
+    private TextField confPassword;
+    @FXML
+    private Button creatAccount;
+    @FXML
+    private DatePicker dateOfBirth;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField emerContFirstName;
+    @FXML
+    private Text errorMessage;
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField pharmacyPref;
+    @FXML
+    private TextField phoneNumber;
+    @FXML
+    private TextField username;
+
+
     void handleBackButton(ActionEvent event) throws IOException{
         Stage stage;
 		Parent root;
@@ -33,10 +63,40 @@ public class CreateAccountController implements Initializable{
 		stage.show();
     }
 
+    ArrayList<Patient> patientAList = new ArrayList<>();
+
     @FXML
     void handleCreateAccount(ActionEvent event) throws IOException
     {
+        String fName, lname, pass, confPass, email, pharPref, phoneNum, userName, emerFirstname, emerLastName, emerEmail, emerPhoneNum, birthDate;
 
+        fName = firstName.getText();
+        lname = lastName.getText();
+        pass = password.getText();
+        confPass = confPassword.getText();
+        birthDate = dateOfBirth.getPromptText();
+        email = this.email.getText();
+        pharPref = pharmacyPref.getText();
+        phoneNum = phoneNumber.getText();
+        userName = username.getText();
+        emerFirstname = emerContFirstName.getText();
+        emerLastName = EmerContLastName.getText();
+        emerEmail = EmerContEmail.getText();
+        emerPhoneNum = EmerContPhone.getText();
+
+        if (fName == "" || lname == "" || pass == "" || confPass  == "" || email == "" || pharPref  == "" || phoneNum  == "" ||
+            userName  == "" || emerFirstname == "" || emerLastName  == "" || emerEmail == "" || emerPhoneNum == "")
+        {
+                errorMessage.setText("There is an Empty Text Field");
+        }
+        else
+        {
+            Patient patient = new Patient(userName, pass, fName, lname, birthDate, email, phoneNum, 
+                                          pharPref, emerFirstname, emerLastName, emerEmail, emerPhoneNum);
+                            
+            patientAList.add(patient);
+            System.out.println("patient added to Array List");
+        }
     }
 
     @Override

@@ -57,7 +57,7 @@
       </Pane>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Text fx:id="errorMessage" layoutX="231.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="139.0">
+            <Text fx:id="errorMessage" fill="RED" layoutX="231.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="139.0">
                <font>
                   <Font name="ArtifaktElement-Light" size="15.0" />
                </font>
