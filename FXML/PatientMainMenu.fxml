@@ -157,8 +157,9 @@
                               </VBox>
                            </children>
                         </HBox>
-                        <Button fx:id="PatientSummary" layoutX="210.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" text="Patient Summary" />
-                        <Button fx:id="messagePatientButton" layoutX="51.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="Message Patient" />
+                        <Button fx:id="PatientSummary" layoutX="259.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Summary" />
+                        <Button fx:id="editPatientInfo" layoutX="14.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Edit Information" />
+                        <Button fx:id="doctorMessage" layoutX="135.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="109.0" text=" Message Doctor" />
                      </children>
                   </Pane>
                </children>
