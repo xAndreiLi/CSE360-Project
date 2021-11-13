@@ -2,7 +2,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * Message Handler class handles all message-related functions. Uses I/O file
