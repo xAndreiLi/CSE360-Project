@@ -69,18 +69,21 @@ public class createAccountController extends Controller{
 
     }
 
-    ArrayList<Account> accountList = new ArrayList<Account>();
-
     @FXML
     void handleCreateAccount(ActionEvent event) throws IOException
     {
+        System.out.println(super.accountList);
         String fName, lname, pass, confPass, email, pharPref, phoneNum, userName, emerFirstname, emerLastName, emerEmail, emerPhoneNum, birthDate;
 
         fName = firstName.getText();
         lname = lastName.getText();
         pass = password.getText();
         confPass = confPassword.getText();
-        birthDate = dateOfBirth.getValue().toString();
+        if(dateOfBirth.getValue() != null){
+            birthDate = dateOfBirth.getValue().toString();
+        } else {
+            birthDate = "";
+        }
         email = this.email.getText();
         pharPref = pharmacyPref.getText();
         phoneNum = phoneNumber.getText();
@@ -90,20 +93,10 @@ public class createAccountController extends Controller{
         emerEmail = EmerContEmail.getText();
         emerPhoneNum = EmerContPhone.getText();
         
-        //reads the file acountList file
-        FileInputStream fis = new FileInputStream("accountList.tmp");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        try {
-            accountList = (ArrayList<Account>) ois.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        ois.close();
-
         //checks if there are any duplicate accounts 
-        for (int i = 0; i < accountList.size(); i++)
+        for (int i = 5; i < super.accountList.size(); i++)
         {
-            Patient patientCheck = (Patient)accountList.get(i);
+            Patient patientCheck = (Patient)super.accountList.get(i);
 
             //System.out.println("newdob = "+ birthDate); //for debugging
             //System.out.println("inlistdob = "+ patientCheck.getDateOfBirth());
@@ -128,18 +121,20 @@ public class createAccountController extends Controller{
         {
             Patient patient = new Patient(userName, pass, fName, lname, birthDate, email, phoneNum, 
                                           pharPref, emerFirstname, emerLastName, emerEmail, emerPhoneNum);
-            accountList.add(patient);
+            super.accountList.add(patient);
             
             errorMessage.setText(" ");
             System.out.println("Patient added to Array List");
             
-            write(accountList);
+            write(super.accountList);
+            System.out.println(super.accountList.get(5).getUsername());
         }       
     }
 
     public static void write (ArrayList<Account> plist) throws IOException
     {
-        FileOutputStream fos = new FileOutputStream("accountList.tmp");
+
+        FileOutputStream fos = new FileOutputStream("./data/accountList.tmp");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(plist);
         oos.close();
@@ -148,6 +143,7 @@ public class createAccountController extends Controller{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
     }
 
 }
