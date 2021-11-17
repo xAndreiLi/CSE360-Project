@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Patient implements Serializable {
+public class Patient extends Accounts implements Serializable {
 
     // Patient Attributes
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
@@ -20,7 +20,8 @@ public class Patient implements Serializable {
 
     // Patient Operations
 
-    public Patient() {
+    public Patient() 
+    {
         // Empty Patient
         this.username = "null";
         this.password = "null";
@@ -36,6 +37,7 @@ public class Patient implements Serializable {
         this.emergenNumber = "000-000-0000";
         this.medication = "";
         this.pharmacy = "CVS";
+        
         // Setting default vitals
         this.weight = 0;
         this.height = "0 ' 0";
@@ -44,10 +46,10 @@ public class Patient implements Serializable {
         this.patientHistoryArray = new String[10];
     }
 
-    public Patient(String username, String password, String fName, String lName, String birthday, String email, String phoneNum, String pharmacy,
-            String emerfName, String emerlName, String emerEmail, String emergenNumber) {
-        this.username = username;
-        this.password = password;
+    public Patient(String username, String password,String fName, String lName, String birthday, String email, String phoneNum, String pharmacy,
+            String emerfName, String emerlName, String emerEmail, String emergenNumber) 
+    {
+        super(username, password);
         this.patientFName = fName;
         this.patientLName = lName;
         this.dateOfBirth = birthday;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
@@ -8,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox fx:controller="LogInController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogInController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #335a63;">
          <children>
@@ -45,18 +43,25 @@
       </Pane>
       <Pane prefHeight="200.0" prefWidth="600.0">
          <children>
-            <Button fx:id="signIn" onAction= "#takeInUserNameAndPassword" layoutX="237.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Sign in" textAlignment="CENTER">
+            <Button fx:id="signIn" layoutX="237.0" layoutY="14.0" mnemonicParsing="false" onAction="#takeInUserNameAndPassword" prefHeight="25.0" prefWidth="127.0" text="Sign in" textAlignment="CENTER">
                <font>
                   <Font name="ArtifaktElement-Light" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="createAccountReq" onAction="#handleCreateAccountButtonAction" layoutX="237.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Create an account" textAlignment="CENTER">
+            <Button fx:id="createAccountReq" layoutX="237.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleCreateAccountButtonAction" prefHeight="25.0" prefWidth="127.0" text="Create an account" textAlignment="CENTER">
                <font>
                   <Font name="ArtifaktElement-Light" size="12.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Text fx:id="errorMessage" fill="RED" layoutX="231.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="139.0">
+               <font>
+                  <Font name="ArtifaktElement-Light" size="15.0" />
+               </font>
+            </Text>
+         </children></Pane>
    </children>
 </VBox>

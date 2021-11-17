@@ -5,7 +5,7 @@ import java.io.Serializable;
  * 
  * @author Randy Pham
  */
-public class Doctor implements Serializable{
+public class Doctor extends Accounts implements Serializable{
 
     // TODO: something something patient list
 
@@ -13,6 +13,7 @@ public class Doctor implements Serializable{
     private Patient currentPatient;
     private String doctorFirstName;
     private int doctorID;
+    String password, username; 
 
     // default constructor
     public Doctor() {
