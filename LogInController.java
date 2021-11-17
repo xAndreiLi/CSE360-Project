@@ -109,13 +109,13 @@ public class LogInController implements Initializable {
         accountList = new ArrayList<Account>();
 
         // Check if accountList has not been initialized
-        File accFile = new File("accountList.tmp");
+        File accFile = new File("./data/accountList.tmp");
         if (!accFile.exists()) {
             System.out.println("accountList not found: creating new file");
             FileOutputStream fos;
             ObjectOutputStream oos;
             try {
-                fos = new FileOutputStream("accountList.tmp");
+                fos = new FileOutputStream("./data/accountList.tmp");
                 oos = new ObjectOutputStream(fos);
                 
                 // Add doctors and nurses
@@ -142,7 +142,7 @@ public class LogInController implements Initializable {
         } else {    // If accountList exists then read and add to accountList
             try {
                 System.out.println("Reading from accountList");
-                FileInputStream fis = new FileInputStream("accountList.tmp");
+                FileInputStream fis = new FileInputStream("./data/accountList.tmp");
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 Account newAcc;
                 while (true) {

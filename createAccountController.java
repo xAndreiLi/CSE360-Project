@@ -69,7 +69,7 @@ public class createAccountController extends Controller{
 
     }
 
-    ArrayList<Account> accountList = new ArrayList<Account>();
+    private ArrayList<Account> accountList;
 
     @FXML
     void handleCreateAccount(ActionEvent event) throws IOException
@@ -91,17 +91,10 @@ public class createAccountController extends Controller{
         emerPhoneNum = EmerContPhone.getText();
         
         //reads the file acountList file
-        FileInputStream fis = new FileInputStream("accountList.tmp");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        try {
-            accountList = (ArrayList<Account>) ois.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        ois.close();
-
+        
+        System.out.println(accountList.size());
         //checks if there are any duplicate accounts 
-        for (int i = 0; i < accountList.size(); i++)
+        for (int i = 5; i < accountList.size(); i++)
         {
             Patient patientCheck = (Patient)accountList.get(i);
 
@@ -134,12 +127,14 @@ public class createAccountController extends Controller{
             System.out.println("Patient added to Array List");
             
             write(accountList);
+            System.out.println(accountList.get(5).getUsername());
         }       
     }
 
     public static void write (ArrayList<Account> plist) throws IOException
     {
-        FileOutputStream fos = new FileOutputStream("accountList.tmp");
+
+        FileOutputStream fos = new FileOutputStream("./data/accountList.tmp");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(plist);
         oos.close();
@@ -148,6 +143,8 @@ public class createAccountController extends Controller{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        accountList = super.accountList;
+        System.out.println(accountList.size());
     }
 
 }
