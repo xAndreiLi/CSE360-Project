@@ -6,8 +6,8 @@ import javafx.fxml.Initializable;
 
 public class Controller implements Initializable{
 
-	private Account currentUser;
-	private ArrayList<Account> accountList;
+	protected Account currentUser;
+	protected ArrayList<Account> accountList;
 
 	public void setUser(Account user){
 		currentUser = user;
