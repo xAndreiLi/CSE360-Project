@@ -27,7 +27,6 @@ public class Patient extends Account{
         this.dateOfBirth = "Jan. 01, 2000";
         this.patientFName = "John";
         this.patientLName = "Doe";
-        this.dateOfBirth = null;
         this.patientEmail = "johndoe@doe.com";
         this.patientNumber = "000-000-0000";
         this.emerFName = "Jane";
