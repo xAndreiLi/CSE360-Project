@@ -1,5 +1,5 @@
 
-public class Nurse {
+public class Nurse extends Account{
 	//work done by Long Ly
     //MAINLY DONE NEED PATIENT LIST TO FINISH
     
