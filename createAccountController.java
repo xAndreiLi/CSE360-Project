@@ -90,18 +90,6 @@ public class createAccountController implements Initializable{
         emerEmail = EmerContEmail.getText();
         emerPhoneNum = EmerContPhone.getText();
 
-
-        FileInputStream fis = new FileInputStream("accountList.tmp");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
-        try {
-            patientAList = (ArrayList<Account>) ois.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        ois.close();
-
-
         if (fName == "" || lname == "" || pass == "" || confPass  == "" || email == "" || pharPref  == "" || phoneNum  == "" ||
             userName  == "" || emerFirstname == "" || emerLastName  == "" || emerEmail == "" || emerPhoneNum == "")
         {

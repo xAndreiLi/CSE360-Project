@@ -1,5 +1,8 @@
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -83,9 +86,24 @@ public class LogInController implements Initializable{
     }
     
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void initialize(URL location, ResourceBundle resources) {    
+        ArrayList<Account> accountList = new ArrayList<Account>();
+        try {
+            FileInputStream fis = new FileInputStream("accountList.tmp");
+            ObjectInputStream ois = new ObjectInputStream(fis);
 
+            while(true){
+                Account newAcc = (Account)ois.readObject();
+                if(newAcc != null){
+                    accountList.add(newAcc);
+                } else {
+                    break;
+                }
+            }
+            
+            ois.close(); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }     
+    }
 }
