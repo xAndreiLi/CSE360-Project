@@ -2,12 +2,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.io.File;
 import java.io.IOException;
 
 public class main extends Application{
@@ -24,4 +19,5 @@ public class main extends Application{
         stage.setScene(scene);
         stage.show();
     }
+
 }

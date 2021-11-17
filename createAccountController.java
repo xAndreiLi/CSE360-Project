@@ -1,4 +1,10 @@
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -50,17 +56,17 @@ public class createAccountController implements Initializable{
     @FXML
     private TextField username;
 
-
+    @FXML
     void handleBackButton(ActionEvent event) throws IOException{
         Stage stage;
 		Parent root;
-		//System.out.println("Pressed"); //for dubugging
 		stage = (Stage) AccouCreationBack.getScene().getWindow();
 		root = FXMLLoader.load(getClass().getResource("FXML/LoginScreen.fxml"));
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+
     }
 
     ArrayList<Patient> patientAList = new ArrayList<>();
@@ -84,6 +90,18 @@ public class createAccountController implements Initializable{
         emerEmail = EmerContEmail.getText();
         emerPhoneNum = EmerContPhone.getText();
 
+
+        FileInputStream fis = new FileInputStream("patientList.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+
+        try {
+            patientAList = (ArrayList<Patient>) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        ois.close();
+
+
         if (fName == "" || lname == "" || pass == "" || confPass  == "" || email == "" || pharPref  == "" || phoneNum  == "" ||
             userName  == "" || emerFirstname == "" || emerLastName  == "" || emerEmail == "" || emerPhoneNum == "")
         {
@@ -93,15 +111,33 @@ public class createAccountController implements Initializable{
         {
             Patient patient = new Patient(userName, pass, fName, lname, birthDate, email, phoneNum, 
                                           pharPref, emerFirstname, emerLastName, emerEmail, emerPhoneNum);
-                            
             patientAList.add(patient);
-            System.out.println("patient added to Array List");
+
+            Doctor doc = new Doctor("doctorFirstName", 0001);//testing
+            
+            System.out.println("Patient added to Array List");
+            
+            write(patientAList);
         }
+        for (int i = 0; i < patientAList.size(); i++) {
+            System.out.println(patientAList.get(i).getUsername());
+        }                
     }
+
+    public static void write (ArrayList<Patient> plist ) throws IOException
+    {
+        FileOutputStream fos = new FileOutputStream("patientList.tmp");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(plist);
+        oos.close();
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        for (int i = 0; i < patientAList.size(); i++) {
+            System.out.println(patientAList.get(i));
+        }
     }
 
 }

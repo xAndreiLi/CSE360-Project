@@ -31,7 +31,6 @@ public class LogInController implements Initializable{
     void handleCreateAccountButtonAction(ActionEvent event) throws IOException{
         Stage stage;
 		Parent root;
-		System.out.println("Pressed"); //for dubugging
 		stage = (Stage) createAccountReq.getScene().getWindow();
 
 		root = FXMLLoader.load(getClass().getResource("FXML/createAccount.fxml"));
@@ -51,7 +50,7 @@ public class LogInController implements Initializable{
         String userName = usernameLogin.getText();
         String password = passwordLogin.getText();
 
-
+        
         if(true) // Username and password match in file
         {
             stage = (Stage) signIn.getScene().getWindow();
