@@ -3,7 +3,7 @@
  * 
  * @author Randy Pham
  */
-public class Doctor extends Account{
+public class Doctor extends Account {
 
     // TODO: something something patient list
 
@@ -11,13 +11,14 @@ public class Doctor extends Account{
     private Patient currentPatient;
     private String doctorFirstName;
     private int doctorID;
-    String password, username; 
+    String password, username;
 
     // default constructor
     public Doctor() {
         messageHandler = new MessageHandler();
         doctorID = 0;
         doctorFirstName = "John";
+        currentPatient = null;
     }
 
     // overload constructor
