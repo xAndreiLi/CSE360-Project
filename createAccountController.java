@@ -69,7 +69,7 @@ public class createAccountController implements Initializable{
 
     }
 
-    ArrayList<Patient> patientAList = new ArrayList<>();
+    ArrayList<Account> patientAList = new ArrayList<>();
 
     @FXML
     void handleCreateAccount(ActionEvent event) throws IOException
@@ -91,11 +91,11 @@ public class createAccountController implements Initializable{
         emerPhoneNum = EmerContPhone.getText();
 
 
-        FileInputStream fis = new FileInputStream("patientList.tmp");
+        FileInputStream fis = new FileInputStream("accountList.tmp");
         ObjectInputStream ois = new ObjectInputStream(fis);
 
         try {
-            patientAList = (ArrayList<Patient>) ois.readObject();
+            patientAList = (ArrayList<Account>) ois.readObject();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -112,21 +112,19 @@ public class createAccountController implements Initializable{
             Patient patient = new Patient(userName, pass, fName, lname, birthDate, email, phoneNum, 
                                           pharPref, emerFirstname, emerLastName, emerEmail, emerPhoneNum);
             patientAList.add(patient);
-
-            Doctor doc = new Doctor("doctorFirstName", 0001);//testing
             
             System.out.println("Patient added to Array List");
             
             write(patientAList);
         }
-        for (int i = 0; i < patientAList.size(); i++) {
-            System.out.println(patientAList.get(i).getUsername());
-        }                
+        for (int i = 0; i < patientAList.size(); i++) { //testing to see if
+            System.out.println(patientAList.get(i));
+        }          
     }
 
-    public static void write (ArrayList<Patient> plist ) throws IOException
+    public static void write (ArrayList<Account> plist ) throws IOException
     {
-        FileOutputStream fos = new FileOutputStream("patientList.tmp");
+        FileOutputStream fos = new FileOutputStream("accountList.tmp");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(plist);
         oos.close();
@@ -135,9 +133,6 @@ public class createAccountController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < patientAList.size(); i++) {
-            System.out.println(patientAList.get(i));
-        }
     }
 
 }
