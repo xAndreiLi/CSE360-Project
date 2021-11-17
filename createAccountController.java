@@ -126,20 +126,10 @@ public class createAccountController extends Controller{
             errorMessage.setText(" ");
             System.out.println("Patient added to Array List");
             
-            write(super.accountList);
+            super.saveData();
             System.out.println(super.accountList.get(5).getUsername());
         }       
     }
-
-    public static void write (ArrayList<Account> plist) throws IOException
-    {
-
-        FileOutputStream fos = new FileOutputStream("./data/accountList.tmp");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(plist);
-        oos.close();
-    }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
