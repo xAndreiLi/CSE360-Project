@@ -22,7 +22,8 @@ public class Nurse extends Account{
     private MessageHandler messageHandler;
 
     //I don't think nurses have their own id or names
-    public Nurse(){
+    public Nurse(String username, String password){
+        super(username, password);
         //messageHandler = New MessageHandler();
         
     }//end of Nurse Constructor

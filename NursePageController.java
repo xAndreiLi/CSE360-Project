@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NursePageController implements Initializable{
+public class NursePageController extends Controller{
 
 	private Nurse currentNurse;
 
@@ -27,6 +27,7 @@ public class NursePageController implements Initializable{
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException{
+		System.out.println("Go to Patient Info Pressed");
         Stage stage;
 		Parent root;
 		stage = (Stage) PatientListButton.getScene().getWindow();

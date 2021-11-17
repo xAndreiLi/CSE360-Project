@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class Account implements Serializable{
 
-	private String username, password;
+	protected String username, password;
 
 	public Account()
 	{
