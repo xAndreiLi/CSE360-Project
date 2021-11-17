@@ -18,7 +18,7 @@
                   <Font name="ArtifaktElement-Light" size="23.0" />
                </font>
             </Text>
-            <Button fx:id="AccouCreationBack" onAction="#handleBackButton" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+            <Button fx:id="AccouCreationBack" onAction="#handleBackButton" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back"/>
          </children>
       </Pane>
       <HBox prefHeight="319.0" prefWidth="600.0">

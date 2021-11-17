@@ -20,7 +20,6 @@
     ],
     "java.dependency.packagePresentation": "flat",
     "java.project.sourcePaths": [
-        "FXML",
         ""
     ]
 }

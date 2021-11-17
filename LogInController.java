@@ -33,10 +33,8 @@ public class LogInController implements Initializable{
 		Parent root;
 		System.out.println("Pressed"); //for dubugging
 		stage = (Stage) createAccountReq.getScene().getWindow();
-        System.out.println("stage set");
 
 		root = FXMLLoader.load(getClass().getResource("FXML/createAccount.fxml"));
-        System.out.println("did i make it this far?");
 		Scene scene = new Scene(root);
 
 		stage.setScene(scene);
@@ -46,11 +44,13 @@ public class LogInController implements Initializable{
     @FXML
     void takeInUserNameAndPassword(ActionEvent event) throws IOException
     {
+        PatientList patientList;
         Stage stage;
         FXMLLoader loader;
         System.out.println("pressed logIn button");
         String userName = usernameLogin.getText();
         String password = passwordLogin.getText();
+
 
         if(true) // Username and password match in file
         {
