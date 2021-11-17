@@ -12,7 +12,7 @@
    <children>
       <Pane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #335a63;">
          <children>
-            <Text fill="#f5f5f5" layoutX="196.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nures Page" textAlignment="CENTER" wrappingWidth="208.685546875">
+            <Text fill="#f5f5f5" layoutX="196.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nurse Page" textAlignment="CENTER" wrappingWidth="208.685546875">
                <font>
                   <Font name="ArtifaktElement-Light" size="23.0" />
                </font>
@@ -44,12 +44,12 @@
             </Pane>
             <Pane prefHeight="350.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="goToPatientInfo" layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Patient Information" textAlignment="CENTER" wrappingWidth="182.685546875">
+                  <Text fx:id="PatientInfoText" layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Patient Information" textAlignment="CENTER" wrappingWidth="182.685546875">
                      <font>
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="goToPatientInfo" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
+                  <Button fx:id="goToPatientInfo" onAction="#handlePatientListButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
                </children>
             </Pane>
          </children>

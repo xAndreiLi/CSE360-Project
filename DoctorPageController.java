@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class DoctorPageController implements Initializable {
+public class DoctorPageController extends Controller{
 
     @FXML
     private Button PatientListButton;

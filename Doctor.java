@@ -11,10 +11,10 @@ public class Doctor extends Account {
     private Patient currentPatient;
     private String doctorFirstName;
     private int doctorID;
-    String password, username;
 
     // default constructor
     public Doctor() {
+        super();
         messageHandler = new MessageHandler();
         doctorID = 0;
         doctorFirstName = "John";
@@ -22,7 +22,8 @@ public class Doctor extends Account {
     }
 
     // overload constructor
-    public Doctor(String doctorFirstName, int doctorID) {
+    public Doctor(String doctorFirstName, int doctorID, String username, String password) {
+        super(username, password);
         messageHandler = new MessageHandler();
         this.doctorFirstName = doctorFirstName;
         this.doctorID = doctorID;

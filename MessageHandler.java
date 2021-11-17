@@ -10,10 +10,8 @@ import java.util.Objects;
  * 
  * @author Randy Pham
  */
-public class MessageHandler {
-    Doctor doctor;
-    Patient patient;
-    String fileDir = "Messages/";
+public class MessageHandler implements Serializable{
+    private String fileDir = "Messages/";
 
     // default constructor
     public MessageHandler() {

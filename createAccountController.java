@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class createAccountController implements Initializable{
+public class createAccountController extends Controller{
 
     @FXML
     private Button AccouCreationBack;
@@ -69,7 +69,7 @@ public class createAccountController implements Initializable{
 
     }
 
-    ArrayList<Account> patientAList = new ArrayList<>();
+    ArrayList<Account> accountList = new ArrayList<Account>();
 
     @FXML
     void handleCreateAccount(ActionEvent event) throws IOException
@@ -80,7 +80,7 @@ public class createAccountController implements Initializable{
         lname = lastName.getText();
         pass = password.getText();
         confPass = confPassword.getText();
-        birthDate = dateOfBirth.getPromptText();
+        birthDate = dateOfBirth.getValue().toString();
         email = this.email.getText();
         pharPref = pharmacyPref.getText();
         phoneNum = phoneNumber.getText();
@@ -89,7 +89,36 @@ public class createAccountController implements Initializable{
         emerLastName = EmerContLastName.getText();
         emerEmail = EmerContEmail.getText();
         emerPhoneNum = EmerContPhone.getText();
+        
+        //reads the file acountList file
+        FileInputStream fis = new FileInputStream("accountList.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        try {
+            accountList = (ArrayList<Account>) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        ois.close();
 
+        //checks if there are any duplicate accounts 
+        for (int i = 0; i < accountList.size(); i++)
+        {
+            Patient patientCheck = (Patient)accountList.get(i);
+
+            //System.out.println("newdob = "+ birthDate); //for debugging
+            //System.out.println("inlistdob = "+ patientCheck.getDateOfBirth());
+
+            //duplicate comparison being made
+            if(fName.equals(patientCheck.getPatientFirstName())
+            && lname.equals(patientCheck.getPatientLastName())
+            && birthDate.equals(patientCheck.getDateOfBirth()))
+            {
+                errorMessage.setText("The Account Aready Exists");
+                return;
+            }
+        }
+         
+        //checks if any of the text fields are empty
         if (fName == "" || lname == "" || pass == "" || confPass  == "" || email == "" || pharPref  == "" || phoneNum  == "" ||
             userName  == "" || emerFirstname == "" || emerLastName  == "" || emerEmail == "" || emerPhoneNum == "")
         {
@@ -99,18 +128,16 @@ public class createAccountController implements Initializable{
         {
             Patient patient = new Patient(userName, pass, fName, lname, birthDate, email, phoneNum, 
                                           pharPref, emerFirstname, emerLastName, emerEmail, emerPhoneNum);
-            patientAList.add(patient);
+            accountList.add(patient);
             
+            errorMessage.setText(" ");
             System.out.println("Patient added to Array List");
             
-            write(patientAList);
-        }
-        for (int i = 0; i < patientAList.size(); i++) { //testing to see if
-            System.out.println(patientAList.get(i));
-        }          
+            write(accountList);
+        }       
     }
 
-    public static void write (ArrayList<Account> plist ) throws IOException
+    public static void write (ArrayList<Account> plist) throws IOException
     {
         FileOutputStream fos = new FileOutputStream("accountList.tmp");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
