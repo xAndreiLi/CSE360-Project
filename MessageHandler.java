@@ -1,6 +1,8 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Objects;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * Message Handler class handles all message-related functions. Uses I/O file
@@ -75,16 +77,17 @@ public class MessageHandler {
     }
 
     /**
-     * This method reads existing files from the Messages/ folder. If there is no
-     * message found, it throws an exception
+     * This method reads existing files from the Messages/ folder and returns a
+     * string containing the contents of the file. If there is no message found, it
+     * throws an exception
      * 
      * @param filename - the name of the file
      * @throws IOException
      */
-    public void readMessage(String filename) throws IOException {
+    public String readMessage(String filename) throws IOException {
         File messageFile;
-        Scanner reader;
-        String line; // flag, message;
+        // Scanner reader;
+        String content; // flag, message;
         // int numOfLines = 0, rowNum = 0;
 
         messageFile = findMessage(fileDir + filename);
@@ -92,6 +95,8 @@ public class MessageHandler {
         if (messageFile == null) {
             // UH OH THERE IS NO EXISTING MESSAGE
             System.out.println("Cannot find message at: " + messageFile);
+
+            return "Cannot find message error";
         } else {
             /*
              * // count number of lines numOfLines = countLines(fileDir + filename); reader
@@ -109,15 +114,20 @@ public class MessageHandler {
              * 
              * reader.close();
              */
-            reader = new Scanner(messageFile);
+            /*
+             * reader = new Scanner(messageFile);
+             * 
+             * while (reader.hasNextLine()) { line = reader.nextLine(); // display the line
+             * to the gui System.out.println(line); }
+             * 
+             * reader.close();
+             */
 
-            while (reader.hasNextLine()) {
-                line = reader.nextLine();
-                // display the line to the gui
-                System.out.println(line);
-            }
+            Path pathFromFile = messageFile.toPath();
 
-            reader.close();
+            content = Files.readString(pathFromFile);
+
+            return content;
         }
     }
 
