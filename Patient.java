@@ -11,7 +11,7 @@ public class Patient extends Account{
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
     String patientEmail, patientFName, patientLName, patientNumber, height, // Patient info and reason for visit
             emerFName, emerLName, emerEmail, emergenNumber, medication, // Emergency Contact Info
-            username, password, dateOfBirth, pharmacy; 
+            dateOfBirth, pharmacy; 
     Doctor currentDoctor;
     MessageHandler messageHandler;
     String[] patientHistoryArray;
@@ -22,8 +22,7 @@ public class Patient extends Account{
     public Patient() 
     {
         // Empty Patient
-        this.username = "null";
-        this.password = "null";
+        super();
         this.dateOfBirth = "Jan. 01, 2000";
         this.patientFName = "John";
         this.patientLName = "Doe";
@@ -153,10 +152,10 @@ public class Patient extends Account{
         this.emergenNumber = number;
     }
     public void setUsername(String username){
-        this.username = username;
+        super.username = username;
     }
     public void setPassword(String password){
-        this.password = password;
+        super.password = password;
     }
     public void setDateOfBirth(String birthday){
         this.dateOfBirth = birthday;
