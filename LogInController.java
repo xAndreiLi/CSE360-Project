@@ -77,8 +77,8 @@ public class LogInController implements Initializable {
             Controller controller;
             if (currentUser instanceof Patient) // If account has patient type
             {
-                loader = new FXMLLoader(getClass().getResource("FXML/PatientList.fxml"));
-                
+                loader = new FXMLLoader(getClass().getResource("FXML/PatientInformation.fxml"));
+                controller = loader.getController();
             } else if (currentUser instanceof Nurse) // If account has nurse type
             {
                 loader = new FXMLLoader(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
@@ -131,9 +131,7 @@ public class LogInController implements Initializable {
                 accountList.add(tommy);
                 accountList.add(longg);
 
-                for (int i = 0; i < accountList.size(); i++) {
-                    oos.writeObject(accountList.get(i));
-                }
+                oos.writeObject(accountList);
                 oos.close();
 
             } catch (Exception e) {
@@ -144,16 +142,7 @@ public class LogInController implements Initializable {
                 System.out.println("Reading from accountList");
                 FileInputStream fis = new FileInputStream("./data/accountList.tmp");
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                Account newAcc;
-                while (true) {
-                    newAcc = (Account) ois.readObject();
-                    if (newAcc != null) {
-                        accountList.add(newAcc);
-                    } else {
-                        break;
-                    }
-                }
-
+                accountList = (ArrayList<Account>)ois.readObject();
                 ois.close();
             } catch (EOFException e){
 

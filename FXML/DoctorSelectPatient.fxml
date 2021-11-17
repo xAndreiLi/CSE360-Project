@@ -38,7 +38,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="editVitalsButton" onAction="handlePatientPhysicalButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Physical" />
+                  <Button fx:id="editVitalsButton" onAction="#handlePatientPhysicalButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Physical" />
                </children>
             </Pane>
             <Pane prefHeight="350.0" prefWidth="200.0">
@@ -48,7 +48,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="goToPatientInfo" onAction="handlePatientInfoButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
+                  <Button fx:id="goToPatientInfo" onAction="#handlePatientInfoButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
                </children>
             </Pane>
          </children>
