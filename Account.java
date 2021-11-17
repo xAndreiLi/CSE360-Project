@@ -14,4 +14,14 @@ public class Account implements Serializable{
 		this.password = password;
 		this.username = username;
 	}
+
+	public String getUsername()
+	{
+		return username;
+	}
+
+	public String getPassword()
+	{
+		return password;
+	}
 }
