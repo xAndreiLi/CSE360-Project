@@ -3,7 +3,7 @@
  * 
  * @author Randy Pham
  */
-public class Doctor extends Account{
+public class Doctor extends Account {
 
     // TODO: something something patient list
 
@@ -18,6 +18,7 @@ public class Doctor extends Account{
         messageHandler = new MessageHandler();
         doctorID = 0;
         doctorFirstName = "John";
+        currentPatient = null;
     }
 
     // overload constructor
