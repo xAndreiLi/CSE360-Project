@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class createAccountController implements Initializable{
+public class createAccountController extends Controller{
 
     @FXML
     private Button AccouCreationBack;
