@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class DoctorPageController extends Controller{
+public class DoctorPageController extends Controller {
 
     @FXML
     private Button PatientListButton;
@@ -58,6 +58,9 @@ public class DoctorPageController extends Controller{
         // i want to show the Doctor object's currentPatient here if they have one
         // if (Doctor.currentPatient != null)
         // { update the Text with id="selectedPatient" }
+        if (super.currentUser instanceof Doctor) {
+            // how to use doctor methods
+        }
     }
 
 }
