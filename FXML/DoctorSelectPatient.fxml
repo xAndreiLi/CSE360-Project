@@ -43,7 +43,7 @@
             </Pane>
             <Pane prefHeight="350.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="goToPatientInfo" layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Patient Information" textAlignment="CENTER" wrappingWidth="182.685546875">
+                  <Text fx:id="goToPatientInfoText" layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Patient Information" textAlignment="CENTER" wrappingWidth="182.685546875">
                      <font>
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>

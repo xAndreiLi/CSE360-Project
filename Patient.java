@@ -11,7 +11,8 @@ public class Patient extends Account{
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
     String patientEmail, patientFName, patientLName, patientNumber, height, // Patient info and reason for visit
             emerFName, emerLName, emerEmail, emergenNumber, medication, // Emergency Contact Info
-            dateOfBirth, pharmacy, immunization, prevHeathIssues; 
+            dateOfBirth, pharmacy, immunization, prevbHealthIssues, room; 
+  
     Doctor currentDoctor;
     MessageHandler messageHandler;
     String[] patientHistoryArray;
@@ -44,6 +45,7 @@ public class Patient extends Account{
         this.bodyTemp = 0;
         this.bloodPres = 0;
         this.patientHistoryArray = new String[10];
+        this.room = "N/A";
     }
 
     public Patient(String username, String password,String fName, String lName, String birthday, String email, String phoneNum, String pharmacy,
@@ -65,7 +67,8 @@ public class Patient extends Account{
         this.height = "0 ' 0";
         this.bodyTemp = 0;
         this.bloodPres = 0;
-        this.patientHistoryArray = new String[10];
+        this.patientHistoryArray = new String[50];
+        this.room = "N/A";
     }
 
     
@@ -177,6 +180,10 @@ public class Patient extends Account{
     public void setPharmacy(String pharmacy){
         this.pharmacy = pharmacy;
     }
+
+    public void setRoom(String room){
+        this.room = room;
+    }
     // Getters for the View Own Patient Info
     public float getWeight() {
         return this.weight;
@@ -261,5 +268,9 @@ public class Patient extends Account{
 
     public String getPharmacy(){
         return this.pharmacy;
+    }
+
+    public String getRoom(){
+        return this.room;
     }
 }

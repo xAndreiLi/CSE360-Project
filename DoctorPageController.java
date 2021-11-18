@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class DoctorPageController extends Controller {
@@ -19,6 +20,8 @@ public class DoctorPageController extends Controller {
 
     @FXML
     private Button PatientListButton, editPhysicalButton, goToPatientInfo;
+    @FXML
+    private Text selectedPatient;
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException {
@@ -27,32 +30,34 @@ public class DoctorPageController extends Controller {
 
     @FXML
     void handlePatientPhysicalButton(ActionEvent event) throws IOException {
-        if(currentPatient!=null){
-			super.goToPage("FXML/PatientPhysical.fxml", editPhysicalButton);
-		}
+        if (currentPatient != null) {
+            super.goToPage("FXML/PatientPhysical.fxml", editPhysicalButton);
+        }
     }
 
     @FXML
     void handlePatientInfoButton(ActionEvent event) throws IOException {
-        if(currentPatient!=null){
-			super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
-		}
+        if (currentPatient != null) {
+            super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
+        }
     }
 
     @Override
-    public void initData(){
+    public void initData() {
         currentDoctor = (Doctor) currentUser;
         currentPatient = (Patient) selectedAccount;
+        currentDoctor.setCurrentPatient(currentPatient);
+
+        // update selectedPatient text
+        if (currentPatient != null) {
+            selectedPatient.setText("Selected Patient: " + currentPatient.getPatientFullName());
+        } else {
+            selectedPatient.setText("Selected Patient: NONE");
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // i want to show the Doctor object's currentPatient here if they have one
-        // if (Doctor.currentPatient != null)
-        // { update the Text with id="selectedPatient" }
-        if (super.currentUser instanceof Doctor) {
-            // how to use doctor methods
-        }
     }
 
 }

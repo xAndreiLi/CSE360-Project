@@ -10,7 +10,7 @@ import java.util.Objects;
  * 
  * @author Randy Pham
  */
-public class MessageHandler implements Serializable{
+public class MessageHandler implements Serializable {
     private String fileDir = "Messages/";
 
     // default constructor
@@ -22,7 +22,9 @@ public class MessageHandler implements Serializable{
      * This method will either create a new <code>File</code> that will hold the
      * contents of the message between the Doctor and Patient or write to an
      * existing <code>File</code> that holds previous messages between Doctor and
-     * Patient
+     * Patient. The file is created with the hashcodes of the doctor object and
+     * patient object respectfully in the "Messages/" folder. Example file:
+     * Messages/111111222222.txt
      * 
      * @param doctor  - the doctor object
      * @param patient - the patient object
@@ -77,7 +79,8 @@ public class MessageHandler implements Serializable{
     /**
      * This method reads existing files from the Messages/ folder and returns a
      * string containing the contents of the file. If there is no message found, it
-     * throws an exception
+     * throws an exception. Note: it already appends "Messages/" to the param
+     * filename
      * 
      * @param filename - the name of the file
      * @throws IOException

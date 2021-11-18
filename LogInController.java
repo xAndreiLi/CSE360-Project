@@ -21,9 +21,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LogInController extends Controller{
-
-    private ArrayList<Account> accountList;
-
     @FXML
     private Button createAccountReq;
 
@@ -50,8 +47,6 @@ public class LogInController extends Controller{
         String userName = usernameLogin.getText();
         String password = passwordLogin.getText();
 
-        Account currentUser = null;
-
         for(int i = 0; i<accountList.size(); i++){
             if(userName.equals(accountList.get(i).getUsername())  && password.equals(accountList.get(i).getPassword())){
                 currentUser = accountList.get(i);
@@ -61,7 +56,6 @@ public class LogInController extends Controller{
         if (currentUser != null) // Username and password match in file
         {
             stage = (Stage) signIn.getScene().getWindow();
-            Controller controller;
             if (currentUser instanceof Patient) // If account has patient type
             {
                 super.goToPage("FXML/PatientMainMenu.fxml", signIn);
@@ -85,7 +79,7 @@ public class LogInController extends Controller{
 
         System.out.println("Initializing Accounts");
 
-        accountList = new ArrayList<Account>();
+        super.accountList = new ArrayList<Account>();
 
         // Check if accountList has not been initialized
         File accFile = new File("./data/accountList.tmp");
@@ -121,7 +115,7 @@ public class LogInController extends Controller{
                 System.out.println("Reading from accountList");
                 FileInputStream fis = new FileInputStream("./data/accountList.tmp");
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                accountList = (ArrayList<Account>)ois.readObject();
+                super.accountList = (ArrayList<Account>)ois.readObject();
                 ois.close();
             } catch (EOFException e){
 
