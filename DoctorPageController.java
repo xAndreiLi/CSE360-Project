@@ -47,9 +47,11 @@ public class DoctorPageController extends Controller {
         currentDoctor = (Doctor) super.currentUser;
         currentPatient = (Patient) super.selectedAccount;
         // set current patients and doctors
-        currentDoctor.setCurrentPatient(currentPatient);
-        currentPatient.assignDoctor(currentDoctor);
-
+        if(super.selectedAccount!=null){
+            currentDoctor.setCurrentPatient(currentPatient);
+            currentPatient.assignDoctor(currentDoctor);
+        }
+        
         // update selectedPatient text
         if (currentPatient != null) {
             selectedPatient.setText("Selected Patient: " + currentPatient.getPatientFullName());
