@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class NursePageController extends Controller{
@@ -25,6 +26,9 @@ public class NursePageController extends Controller{
 
 	@FXML
 	private Button goToPatientInfo;
+
+	@FXML
+	private Text selectedPatient;
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException{
@@ -48,6 +52,10 @@ public class NursePageController extends Controller{
 	public void initData() {
 		currentNurse = (Nurse) super.currentUser;
 		currentPatient = (Patient) super.selectedAccount;
+		if(currentPatient!= null){
+			selectedPatient.setText("Selected Patient : " + currentPatient.getPatientFullName());
+		}
+		
 	}
 
     @Override
