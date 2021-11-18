@@ -11,7 +11,7 @@ public class Patient extends Account{
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
     String patientEmail, patientFName, patientLName, patientNumber, height, // Patient info and reason for visit
             emerFName, emerLName, emerEmail, emergenNumber, medication, // Emergency Contact Info
-            dateOfBirth, pharmacy, immunization, prevbHealthIssues, room; 
+            dateOfBirth, pharmacy, immunization, prevHealthIssues, room; 
   
     Doctor currentDoctor;
     MessageHandler messageHandler;
@@ -34,7 +34,7 @@ public class Patient extends Account{
         this.emerEmail = "janedoe@doe.com";
         this.emergenNumber = "000-000-0000";
         this.medication = "";
-        this.prevHeathIssues = "";
+        this.prevHealthIssues = "";
         this.immunization = "";
 
         this.pharmacy = "CVS";
@@ -154,7 +154,7 @@ public class Patient extends Account{
 
     public void setHealthIssues(String healtIssues)
     {
-        this.prevHeathIssues = healtIssues;
+        this.prevHealthIssues = healtIssues;
     }
 
     public void setEmergencyContact(String firstName, String lastName, String email, String number){
@@ -203,7 +203,7 @@ public class Patient extends Account{
     }
     public String getPrevHealthIssues()
     {
-        return this.prevHeathIssues;
+        return this.prevHealthIssues;
     }
 
     public String getPatientEmail() {
