@@ -49,7 +49,11 @@ public class DoctorPageController extends Controller {
         currentDoctor.setCurrentPatient(currentPatient);
 
         // update selectedPatient text
-        selectedPatient.setText(currentPatient.getPatientFullName());
+        if (currentPatient != null) {
+            selectedPatient.setText("Selected Patient: " + currentPatient.getPatientFullName());
+        } else {
+            selectedPatient.setText("Selected Patient: NONE");
+        }
     }
 
     @Override
