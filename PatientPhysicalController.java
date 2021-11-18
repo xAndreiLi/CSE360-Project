@@ -35,6 +35,7 @@ public class PatientPhysicalController extends Controller {
 		// history array
 		doctor.examinePatient(patientSummaryString, medicationString, dateString);
 		super.saveData();
+		super.backButton(prevPage, submitMedPrescription);
 	}
 
 	@Override

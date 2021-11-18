@@ -58,14 +58,7 @@ public class createAccountController extends Controller{
 
     @FXML
     void handleBackButton(ActionEvent event) throws IOException{
-        Stage stage;
-		Parent root;
-		stage = (Stage) AccouCreationBack.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/LoginScreen.fxml"));
-
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+        super.backButton(super.prevPage, AccouCreationBack);
 
     }
 
@@ -128,6 +121,7 @@ public class createAccountController extends Controller{
             
             super.saveData();
             System.out.println(super.accountList.get(5).getUsername());
+            super.backButton(super.prevPage, creatAccount);
         }       
     }
 

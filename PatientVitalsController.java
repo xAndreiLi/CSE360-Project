@@ -30,7 +30,7 @@ public class PatientVitalsController extends Controller {
 
 	@FXML
 	void handleSubmitButton(ActionEvent event) throws IOException {
-		Patient cp = (Patient) super.currentUser;
+		Patient cp = (Patient) super.selectedAccount;
 		cp.setImmunization(Immunization.getText());
 		cp.setHealthIssues(healthIssues.getText());
 
@@ -43,6 +43,9 @@ public class PatientVitalsController extends Controller {
 
 		float t = Float.parseFloat(PatientTemperature.getText());
 		cp.setBodyTemp(t);
+
+		super.saveData();
+		super.backButton(super.prevPage, submitHealthInfo);
 	}
 
 	@Override

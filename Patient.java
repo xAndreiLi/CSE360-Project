@@ -71,7 +71,7 @@ public class Patient extends Account {
         this.bloodPres = 0;
         this.patientHistoryArray = new ArrayList<String>();
         this.room = "N/A";
-
+        this.immunization = "";
         this.messageHandler = new MessageHandler();
     }
 
