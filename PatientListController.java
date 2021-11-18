@@ -31,20 +31,17 @@ public class PatientListController extends Controller {
 			this.room = new SimpleStringProperty(room);
 		}
 
-		public String getName(){
-			return name.get();
+		public StringProperty nameProperty(){
+			return name;
 		}
-
-		public String getBirthday(){
-			return birthday.get();
+		public StringProperty birthdayProperty(){
+			return birthday;
 		}
-
-		public String getPharmacy(){
-			return pharmacy.get();
+		public StringProperty pharmacyProperty(){
+			return pharmacy;
 		}
-
-		public String getRoom(){
-			return room.get();
+		public StringProperty roomProperty(){
+			return room;
 		}
 	}
 
@@ -80,15 +77,15 @@ public class PatientListController extends Controller {
 		for(int i=5;i<super.accountList.size();i++){
 			Patient patient = (Patient) super.accountList.get(i);
 			PatientListItem item = new PatientListItem(
-				patient.getPatientFirstName()+patient.getPatientLastName(), 
-				patient.getDateOfBirth(), patient.getDateOfBirth(), patient.getRoom());
+				patient.getPatientFirstName() +" "+ patient.getPatientLastName(), 
+				patient.getDateOfBirth(), patient.getPharmacy(), patient.getRoom());
 			patientList.add(item);
 		}
 
-		patiListName.setCellValueFactory(new PropertyValueFactory<>("Name"));
-		patiListBirthDate.setCellValueFactory(new PropertyValueFactory<>("Birthday"));
-		patiListPharmacy.setCellValueFactory(new PropertyValueFactory<>("Pharmacy"));
-		patiListRoom.setCellValueFactory(new PropertyValueFactory<>("Room"));
+		patiListName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		patiListBirthDate.setCellValueFactory(cellData -> cellData.getValue().birthdayProperty());
+		patiListPharmacy.setCellValueFactory(cellData -> cellData.getValue().pharmacyProperty());
+		patiListRoom.setCellValueFactory(cellData -> cellData.getValue().roomProperty());
 
 		patientTable.setItems(patientList);
 	}

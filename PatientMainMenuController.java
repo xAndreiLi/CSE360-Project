@@ -92,7 +92,7 @@ public class PatientMainMenuController extends Controller{
     
 	@FXML
     void handlePatientSummaryButton(ActionEvent event) throws IOException{
-        goToPage("FXML/updatePatientInformation.fxml", editPatientInfo);
+        super.goToPage("FXML/Summary.fxml", PatientSummary);
     }
 	
 	@Override
