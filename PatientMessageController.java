@@ -71,8 +71,8 @@ public class PatientMessageController extends Controller {
      */
     private void showMessage() throws IOException {
         // get hashes of the doctor and patient
-        doctorHash = messageHandler.getHashCode(doctor) + "";
-        patientHash = messageHandler.getHashCode(patient) + "";
+        doctorHash = doctor.getDoctorFirstName();
+        patientHash = patient.getPatientFirstName();
         // this is where the message is stored
         filename = doctorHash + patientHash + ".txt";
 
