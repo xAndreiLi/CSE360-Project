@@ -26,7 +26,7 @@ public class MessageHandler implements Serializable {
      * patient object respectfully in the "Messages/" folder. Example file:
      * Messages/111111222222.txt
      * 
-     * @param account - the doctor or nurse object
+     * @param account - the doctor object
      * @param patient - the patient object
      * @param message - the message itself
      * @throws IOException
