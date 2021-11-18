@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -82,6 +85,10 @@ public class LogInController extends Controller{
         super.accountList = new ArrayList<Account>();
 
         // Check if accountList has not been initialized
+        Path dir = Paths.get("./data");
+        if(!Files.isDirectory(dir)){
+            new File("./data").mkdirs();
+        }
         File accFile = new File("./data/accountList.tmp");
         if (!accFile.exists()) {
             System.out.println("accountList not found: creating new file");

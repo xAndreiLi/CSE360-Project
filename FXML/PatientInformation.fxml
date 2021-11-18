@@ -202,8 +202,8 @@
                               </VBox>
                            </children>
                         </HBox>
-                        <Button fx:id="PatientSummary" layoutX="210.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" text="Patient Summary" />
-                        <Button fx:id="messagePatientButton" layoutX="51.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="Message Patient" />
+                        <Button fx:id="PatientSummary" onAction="#handlePatientSummaryButton" layoutX="210.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" text="Patient Summary" />
+                        <Button fx:id="messagePatientButton" onAction="#handlePatientMessageButton" layoutX="51.0" layoutY="250.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="Message Patient" />
                      </children>
                   </Pane>
                </children>

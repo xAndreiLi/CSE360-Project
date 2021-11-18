@@ -45,6 +45,8 @@ public class Patient extends Account {
         this.bloodPres = 0;
         this.patientHistoryArray = new String[10];
         this.room = "N/A";
+
+        this.messageHandler = new MessageHandler();
     }
 
     public Patient(String username, String password, String fName, String lName, String birthday, String email,
@@ -68,6 +70,8 @@ public class Patient extends Account {
         this.bloodPres = 0;
         this.patientHistoryArray = new String[50];
         this.room = "N/A";
+
+        this.messageHandler = new MessageHandler();
     }
 
     // This function will be used by the Patients to mesage their doctors
