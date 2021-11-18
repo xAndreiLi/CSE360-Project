@@ -28,8 +28,7 @@ public class updatePatientInformation extends Controller{
     public void initData() {
         Patient currentPatient = (Patient)super.currentUser;
         emerContFirstName.setText(currentPatient.getEmergencyFirstName());
-        EmerContLastName.setText(currentPatient.getEmergencyLastName()
-        EmerContEmail.setText()        
+        EmerContLastName.setText(currentPatient.getEmergencyLastName()); 
     }
     @FXML
     private void accountUpdateconfirmButton(Action event) throws IOException{
@@ -37,8 +36,6 @@ public class updatePatientInformation extends Controller{
 
         currentPatient.setUsername(username.getText());
         currentPatient.setPatientFirstName(firstName.getText());
-        currentPatient.set
-
     }
     @FXML
     void handleBackButton(ActionEvent event) {
