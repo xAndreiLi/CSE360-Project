@@ -22,7 +22,7 @@
       </Pane>
       <Pane prefHeight="350.0" prefWidth="600.0">
          <children>
-            <TableView prefHeight="350.0" prefWidth="600.0">
+            <TableView fx:id="patientTable" prefHeight="350.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="patiListName" prefWidth="206.0" text="Name" />
                 <TableColumn fx:id="patiListBirthDate" prefWidth="131.0" text="Birth Date" />
