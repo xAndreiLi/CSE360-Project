@@ -68,7 +68,6 @@ public class updatePatientInformation extends Controller{
         cp.setEmergencyContact(emerContFirstName.getText(), EmerContLastName.getText(), EmerContEmail.getText(), EmerContPhone.getText());
 
         cp.setDateOfBirth(dateOfBirth.getValue().toString());
-
         super.saveData();
         errorMessage.setText("Updated");
     }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Doctor class is responsible for examining Patient objects
  * 
@@ -99,7 +101,7 @@ public class Doctor extends Account {
         }
 
         // update the patient history array for display purposes
-        currentPatient.patientHistoryArray = currentPatient.patientHistory.toArray(currentPatient.patientHistoryArray);
+        currentPatient.patientHistoryArray = new ArrayList<String>(currentPatient.patientHistory);
     }
 
     private void prescribeMedication(String medication) {
