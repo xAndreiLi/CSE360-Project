@@ -1,3 +1,7 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -15,6 +19,17 @@ public class Controller implements Initializable{
 
 	public void setAccountList(ArrayList<Account> list){
 		accountList = list;
+	}
+
+	public void initData(){
+
+	}
+
+	public void saveData() throws IOException{
+		FileOutputStream fos = new FileOutputStream("./data/accountList.tmp");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(accountList);
+        oos.close();
 	}
 
 	@Override
