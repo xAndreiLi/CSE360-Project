@@ -103,7 +103,7 @@ public class MessageHandler implements Serializable {
             // UH OH THERE IS NO EXISTING MESSAGE
             System.out.println("Cannot find message at: " + messageFile);
 
-            return "Cannot find message error";
+            return "No existing messages";
         } else {
             /*
              * // count number of lines numOfLines = countLines(fileDir + filename); reader
