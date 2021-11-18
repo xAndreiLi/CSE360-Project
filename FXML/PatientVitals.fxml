@@ -152,7 +152,12 @@
                      <children>
                         <Pane prefHeight="52.0" prefWidth="371.0">
                            <children>
-                              <Text fx:id="currentPatient" layoutX="8.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="290.0">
+                              <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="105.0">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="25.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="currentPatientName" layoutX="121.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.685546875">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="25.0" />
                                  </font>
@@ -175,14 +180,17 @@
                                     <TextArea fx:id="healthIssues" prefHeight="196.0" prefWidth="290.0" />
                                     <Pane prefHeight="142.0" prefWidth="290.0">
                                        <children>
-                                          <Button fx:id="submitHealthInfo1" layoutX="118.0" layoutY="17.0" mnemonicParsing="false" text="Submit" />
+                                          <TextField fx:id="roomNum" layoutX="22.0" layoutY="25.0" prefHeight="25.0" prefWidth="246.0" promptText="Room Number" />
                                        </children>
                                     </Pane>
                                  </children>
                               </VBox>
                            </children>
                         </Pane>
-                        <Pane prefHeight="75.0" prefWidth="305.0" />
+                        <Pane prefHeight="75.0" prefWidth="305.0">
+                           <children>
+                              <Button fx:id="submitHealthInfo1" layoutX="126.0" layoutY="14.0" mnemonicParsing="false" text="Submit" />
+                           </children></Pane>
                      </children>
                   </VBox>
                </children>

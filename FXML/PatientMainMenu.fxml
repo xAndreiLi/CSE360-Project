@@ -22,12 +22,12 @@
          <children>
             <Pane prefHeight="44.0" prefWidth="600.0">
                <children>
-                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="122.685546875">
+                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="109.0">
                      <font>
                         <Font name="ArtifaktElement-Light" size="25.0" />
                      </font>
                   </Text>
-                  <Text fx:id="currentPatientName" layoutX="120.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="315.0">
+                  <Text fx:id="currentPatientFullName" layoutX="123.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="289.0">
                      <font>
                         <Font name="ArtifaktElement-Light" size="25.0" />
                      </font>
@@ -41,42 +41,42 @@
                      <children>
                         <Pane prefHeight="135.0" prefWidth="206.0">
                            <children>
-                              <Text fx:id="displayFirstName" layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                              <Text layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayBirthDate" layoutX="7.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOB : ">
+                              <Text layoutX="7.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOB : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayEmail" layoutX="7.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+                              <Text layoutX="7.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayPhone" layoutX="7.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                              <Text layoutX="7.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayUsername" layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.0">
+                              <Text fx:id="displayPhoneNum" layoutX="88.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayDateOfBirth" layoutX="59.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.0">
+                              <Text fx:id="displayEmail" layoutX="88.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayEmail1" layoutX="69.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="129.0">
+                              <Text fx:id="displayDateOfBirth" layoutX="88.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayPhone1" layoutX="72.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.0">
+                              <Text fx:id="displayUsername" layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
@@ -85,22 +85,22 @@
                         </Pane>
                         <Pane prefHeight="160.0" prefWidth="206.0">
                            <children>
-                              <Text fx:id="displayContactFirstName" layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
+                              <Text layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactLastName" layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
+                              <Text layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactEmail" layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+                              <Text layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactName" layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                              <Text layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
@@ -110,26 +110,10 @@
                                     <Font name="System Italic" size="12.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="emerFirstName" layoutX="88.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.0">
-                                 <font>
-                                    <Font name="ArtifaktElement-Light" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="emerLastName" layoutX="88.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.0">
-                                 <font>
-                                    <Font name="ArtifaktElement-Light" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="emerEmail" layoutX="60.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="140.0">
-                                 <font>
-                                    <Font name="ArtifaktElement-Light" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="emerPhone" layoutX="69.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.0">
-                                 <font>
-                                    <Font name="ArtifaktElement-Light" size="14.0" />
-                                 </font>
-                              </Text>
+                              <Text fx:id="emergFirstNameText" layoutX="100.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergLastNameText" layoutX="100.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergEmailText" layoutX="100.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergPhoneText" layoutX="100.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
                            </children>
                         </Pane>
                      </children>
@@ -180,20 +164,20 @@
                               </VBox>
                               <VBox prefHeight="142.0" prefWidth="186.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                    <Pane fx:id="prevHealthIssues" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
                                        <children>
                                           <Text fx:id="patiInfoPrevHealthIssue" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
                                        </children></Pane>
-                                    <Pane prefHeight="200.0" prefWidth="240.0" style="-fx-border-color: #000000;">
+                                    <Pane fx:id="prescribedMed" prefHeight="200.0" prefWidth="240.0" style="-fx-border-color: #000000;">
                                        <children>
                                           <Text fx:id="patiInfoPrescribedMed" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                    <Pane fx:id="immunizationHistory" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
                                        <children>
                                           <Text fx:id="patiInfoImmunHistory" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
                                        </children></Pane>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
+                                    <Pane fx:id="prefPharmacy" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
                                        <children>
                                           <Text fx:id="patiInfoPrefPharmacy" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0" />
                                        </children></Pane>
@@ -201,7 +185,11 @@
                               </VBox>
                            </children>
                         </HBox>
+<<<<<<< HEAD
+                        <Button fx:id="PatientSummary" layoutX="259.0" layoutY="264.0" mnemonicParsing="false" onAction="#handlePatientSummaryButton" prefHeight="32.0" prefWidth="102.0" text="Summary" />
+=======
                         <Button fx:id="PatientSummary" layoutX="259.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Summary" />
+>>>>>>> main
                         <Button fx:id="editPatientInfo" layoutX="14.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Edit Information" />
                         <Button fx:id="doctorMessage" layoutX="135.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="109.0" text=" Message Doctor" />
                      </children>
