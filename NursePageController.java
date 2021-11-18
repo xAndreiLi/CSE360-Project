@@ -42,6 +42,7 @@ public class NursePageController extends Controller{
 		}
     }
 
+	@FXML
 	void handlePatientInfoButton(ActionEvent event) throws IOException{
 		if(currentPatient!=null){
 			super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);

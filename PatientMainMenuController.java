@@ -43,16 +43,10 @@ public class PatientMainMenuController extends Controller{
     private Text displayEmail;
 
     @FXML
-    private Text displayEmail1;
-
-    @FXML
     private Text displayFirstName;
 
     @FXML
     private Text displayPhone;
-
-    @FXML
-    private Text displayPhone1;
 
     @FXML
     private Pane displayUserName;
@@ -102,8 +96,8 @@ public class PatientMainMenuController extends Controller{
         currentPatientName.setText(currentPatient.getPatientFullName());
         displayUsername.setText(currentPatient.getUsername());
         displayDateOfBirth.setText(currentPatient.getDateOfBirth());
-        displayEmail1.setText(currentPatient.getPatientEmail());
-        displayPhone1.setText(currentPatient.getPhoneNumber());
+        displayEmail.setText(currentPatient.getPatientEmail());
+        displayPhone.setText(currentPatient.getPhoneNumber());
         //emergency contact info
         emerFirstName.setText(currentPatient.getEmergencyFirstName());
         emerLastName.setText(currentPatient.getPatientLastName());
