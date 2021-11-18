@@ -26,21 +26,21 @@ public class MessageHandler implements Serializable {
      * patient object respectfully in the "Messages/" folder. Example file:
      * Messages/111111222222.txt
      * 
-     * @param doctor  - the doctor object
+     * @param account - the doctor or nurse object
      * @param patient - the patient object
      * @param message - the message itself
      * @throws IOException
      */
-    public void writeMessage(Doctor doctor, Patient patient, String message) throws IOException {
+    public void writeMessage(Account account, Patient patient, String message) throws IOException {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         // using hash code for doctor and patient to link messages together
         // converted both hashes to strings
-        String doctorHash = getHashCode(doctor) + "";
+        String accountHash = getHashCode(account) + "";
         String patientHash = getHashCode(patient) + "";
         // file name for the file
-        String fileName = fileDir + doctorHash + patientHash + ".txt";
+        String fileName = fileDir + accountHash + patientHash + ".txt";
 
         messageFile = new File(fileName);
         // this checks if the file already exists
