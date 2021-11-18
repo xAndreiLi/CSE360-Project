@@ -101,7 +101,7 @@ public class PatientMainMenuController extends Controller{
         //user info
         currentPatientName.setText(currentPatient.getPatientFullName());
         displayUsername.setText(currentPatient.getUsername());
-        displayBirthDate.setText(currentPatient.getDateOfBirth());
+        displayDateOfBirth.setText(currentPatient.getDateOfBirth());
         displayEmail1.setText(currentPatient.getPatientEmail());
         displayPhone1.setText(currentPatient.getPhoneNumber());
         //emergency contact info
