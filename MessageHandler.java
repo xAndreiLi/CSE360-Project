@@ -35,10 +35,11 @@ public class MessageHandler implements Serializable {
         File messageFile;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
+        Doctor doctor = (Doctor) account;
         // using hash code for doctor and patient to link messages together
         // converted both hashes to strings
-        String accountHash = getHashCode(account) + "";
-        String patientHash = getHashCode(patient) + "";
+        String accountHash = doctor.getDoctorFirstName();
+        String patientHash = patient.getPatientFirstName();
         // file name for the file
         String fileName = fileDir + accountHash + patientHash + ".txt";
 
