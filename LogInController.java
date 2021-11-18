@@ -20,7 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LogInController implements Initializable {
+public class LogInController extends Controller{
 
     private ArrayList<Account> accountList;
 
@@ -38,20 +38,7 @@ public class LogInController implements Initializable {
 
     @FXML
     void handleCreateAccountButtonAction(ActionEvent event) throws IOException {
-        Stage stage;
-        FXMLLoader loader;
-        Parent root;
-        stage = (Stage) createAccountReq.getScene().getWindow();
-
-        loader = new FXMLLoader(getClass().getResource("FXML/createAccount.fxml"));
-        root = loader.load();
-        Controller controller = loader.getController();
-        controller.setAccountList(accountList);
-        
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
+        super.goToPage("FXML/createAccount.fxml", createAccountReq);
     }
 
     @FXML
@@ -77,24 +64,14 @@ public class LogInController implements Initializable {
             Controller controller;
             if (currentUser instanceof Patient) // If account has patient type
             {
-                loader = new FXMLLoader(getClass().getResource("FXML/PatientInformation.fxml"));
-                controller = loader.getController();
+                super.goToPage("FXML/PatientMainMenu.fxml", signIn);
             } else if (currentUser instanceof Nurse) // If account has nurse type
             {
-                loader = new FXMLLoader(getClass().getResource("FXML/NurseSelectPatientPage.fxml"));
-                controller = loader.getController();
+                super.goToPage("FXML/NurseSelectPatientPage.fxml", signIn);
             } else // If account has doctor type
             {
-                loader = new FXMLLoader(getClass().getResource("FXML/DoctorSelectPatient.fxml"));
-                controller = loader.getController();
+                super.goToPage("FXML/DoctorSelectPatient.fxml", signIn);
             }
-            root = loader.load();
-            controller = loader.getController();
-            controller.setUser(currentUser);
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         } else {
             // Set log text to invalid credentials
         }
@@ -103,6 +80,8 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        super.currPage = "FXML/LoginScreen.fxml";
 
         System.out.println("Initializing Accounts");
 

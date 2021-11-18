@@ -10,23 +10,26 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PatientInfoController extends Controller{
 
     @FXML
-	private Button PatientListButton;
+	private Text currentPatientText, firstNameText, lastNameText, 
+            emailText, phoneText;
 
     @FXML
-    void handlePatientListButton(ActionEvent event) throws IOException{
-        Stage stage;
-		Parent root;
-		stage = (Stage) PatientListButton.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
+    private Button patientSummary;
 
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+    @FXML
+    void handlePatientSummaryButton(ActionEvent event) throws IOException{
+
+    }
+
+    @Override
+    public void initData() {
+        Patient currentPatient = (Patient) super.currentUser;
     }
 
     @Override
