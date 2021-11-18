@@ -27,13 +27,26 @@ public class MessageHandlerController extends Controller {
     private MessageHandler messageHandler = new MessageHandler();
 
     @FXML
-    void handleSendMessage(ActionEvent event) throws IOException {
+    void handleDoctorSendMessage(ActionEvent event) throws IOException {
         Doctor doctor = (Doctor) super.currentUser;
 
         // set the message equal to whatever is in the text box
         messageToSend = textBox.getText();
         // message the patient
         doctor.messagePatient(doctor.getCurrentPatient(), messageToSend);
+
+        // update the textArea
+        showMessage();
+    }
+
+    @FXML
+    void handlePatientSendMessage(ActionEvent event) throws IOException {
+        Patient patient = (Patient) super.currentUser;
+
+        // set the message equal to whatever is in the text box
+        messageToSend = textBox.getText();
+        // message the patient
+        patient.messageDoctor(patient.currentDoctor, messageToSend);
 
         // update the textArea
         showMessage();

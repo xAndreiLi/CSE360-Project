@@ -23,7 +23,7 @@
       <Pane prefHeight="350.0" prefWidth="600.0">
          <children>
             <TextField fx:id="textBox" layoutX="14.0" layoutY="297.0" prefHeight="25.0" prefWidth="501.0" />
-            <Button fx:id="sendMessage" onAction="handleSendMessage" layoutX="515.0" layoutY="297.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Send" />
+            <Button fx:id="sendMessage" onAction="handleDoctorSendMessage" layoutX="515.0" layoutY="297.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Send" />
             <TextArea fx:id="textArea" editable="false" layoutX="14.0" layoutY="16.0" prefHeight="281.0" prefWidth="571.0">
                <font>
                   <Font name="ArtifaktElement-Light" size="12.0" />
