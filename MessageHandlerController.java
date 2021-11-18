@@ -9,11 +9,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MessageHandlerController extends Controller {
+    @FXML
+    TextArea textArea;
     @FXML
     TextField textBox;
     @FXML
@@ -21,19 +23,38 @@ public class MessageHandlerController extends Controller {
     @FXML
     Button patientMessageBackButton;
 
-    private String message;
-
-    @FXML
-    void handleMessageView(ActionEvent event) throws IOException {
-
-    }
+    private String messageToSend, messageToShow, filename, doctorHash, patientHash;
+    private MessageHandler messageHandler = new MessageHandler();
 
     @FXML
     void handleSendMessage(ActionEvent event) throws IOException {
         Doctor doctor = (Doctor) super.currentUser;
 
-        message = textBox.getText();
+        // set the message equal to whatever is in the text box
+        messageToSend = textBox.getText();
+        // message the patient
+        doctor.messagePatient(doctor.getCurrentPatient(), messageToSend);
 
-        doctor.messagePatient(doctor.getCurrentPatient(), message);
+        // update the textArea
+        showMessage();
+    }
+
+    /**
+     * This method will update the textArea to show the messages between the doctor
+     * and their current patient
+     * 
+     * @throws IOException
+     */
+    private void showMessage() throws IOException {
+        Doctor doctor = (Doctor) super.currentUser;
+        // get hashes of the doctor and patient
+        doctorHash = messageHandler.getHashCode(doctor) + "";
+        patientHash = messageHandler.getHashCode(doctor.getCurrentPatient()) + "";
+        // this is where the message is stored
+        filename = "Messages/" + doctorHash + patientHash + ".txt";
+
+        // update the textArea and show the message
+        messageToShow = messageHandler.readMessage(filename);
+        textArea.setText(messageToShow);
     }
 }
