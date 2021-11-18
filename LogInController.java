@@ -49,7 +49,7 @@ public class LogInController extends Controller{
 
         for(int i = 0; i<accountList.size(); i++){
             if(userName.equals(accountList.get(i).getUsername())  && password.equals(accountList.get(i).getPassword())){
-                currentUser = accountList.get(i);
+                super.currentUser = accountList.get(i);
             }
         }
 
