@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class DoctorPageController extends Controller {
@@ -19,6 +20,8 @@ public class DoctorPageController extends Controller {
 
     @FXML
     private Button PatientListButton, editPhysicalButton, goToPatientInfo;
+    @FXML
+    private Text selectedPatient;
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException {
@@ -43,6 +46,10 @@ public class DoctorPageController extends Controller {
     public void initData() {
         currentDoctor = (Doctor) currentUser;
         currentPatient = (Patient) selectedAccount;
+        currentDoctor.setCurrentPatient(currentPatient);
+
+        // update selectedPatient text
+        selectedPatient.setText(currentPatient.getPatientFullName());
     }
 
     @Override
