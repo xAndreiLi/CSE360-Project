@@ -14,10 +14,25 @@ public class PatientListController extends Controller{
 
 	@FXML
 	Button patiListBack;
+  
+  @FXML
+  private Button patiListBack;
+
+  @FXML
+  private TableColumn<?, ?> patiListBirthDate;
+
+  @FXML
+  private TableColumn<?, ?> patiListName;
+
+  @FXML
+  private TableColumn<?, ?> patiListPharmacy;
+
+  @FXML
+  private TableColumn<?, ?> patiListRoom;
 
 	@FXML
-    void handleBackButton(ActionEvent event) throws IOException{
-		super.backButton(super.prevPage, patiListBack);
+  public void handleBackButton(ActionEvent event) throws IOException{
+    super.backButton(super.prevPage, patiListBack);
 	}
 
 	@Override
@@ -25,8 +40,8 @@ public class PatientListController extends Controller{
 
 	}
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
         
     }
 }

@@ -16,7 +16,6 @@
                   <Font name="ArtifaktElement-Light" size="23.0" />
                </font>
             </Text>
-            <Button fx:id="PatiInfoBack" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
          </children>
       </Pane>
       <VBox prefHeight="350.0" prefWidth="360.0">
