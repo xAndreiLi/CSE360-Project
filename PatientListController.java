@@ -22,13 +22,19 @@ import javafx.stage.Stage;
 public class PatientListController extends Controller {
 
 	class PatientListItem {
+		private Patient patient;
 		private StringProperty name, birthday, pharmacy, room;
 
-		public PatientListItem(String name, String birthday, String pharmacy, String room){
+		public PatientListItem(Patient patient, String name, String birthday, String pharmacy, String room){
+			this.patient = patient;
 			this.name = new SimpleStringProperty(name);
 			this.birthday = new SimpleStringProperty(birthday);
 			this.pharmacy = new SimpleStringProperty(pharmacy);
 			this.room = new SimpleStringProperty(room);
+		}
+
+		public Patient getPatient(){
+			return patient;
 		}
 
 		public StringProperty nameProperty(){
@@ -66,6 +72,10 @@ public class PatientListController extends Controller {
 
 	@FXML
 	public void handleBackButton(ActionEvent event) throws IOException {
+		if(!patientTable.getSelectionModel().isEmpty()){
+			super.selectedAccount = patientTable.getSelectionModel().getSelectedItem().getPatient();
+		}
+		
 		super.backButton(super.prevPage, patiListBack);
 	}
 
@@ -76,7 +86,7 @@ public class PatientListController extends Controller {
 
 		for(int i=5;i<super.accountList.size();i++){
 			Patient patient = (Patient) super.accountList.get(i);
-			PatientListItem item = new PatientListItem(
+			PatientListItem item = new PatientListItem(patient,
 				patient.getPatientFirstName() +" "+ patient.getPatientLastName(), 
 				patient.getDateOfBirth(), patient.getPharmacy(), patient.getRoom());
 			patientList.add(item);
