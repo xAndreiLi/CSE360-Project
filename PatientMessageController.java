@@ -27,7 +27,7 @@ public class PatientMessageController extends Controller {
 
     @Override
     public void initData() {
-        patient = (Patient) currentUser;
+        patient = (Patient) super.currentUser;
         // i want to set the textArea to any previous existing messages
         try {
             showMessage();

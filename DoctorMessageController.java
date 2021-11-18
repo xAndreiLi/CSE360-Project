@@ -13,7 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class DoctorNurseMessageController extends Controller {
+public class DoctorMessageController extends Controller {
     @FXML
     TextArea textArea;
     @FXML
@@ -27,7 +27,7 @@ public class DoctorNurseMessageController extends Controller {
 
     @Override
     public void initData() {
-        doctor = (Doctor) currentUser;
+        doctor = (Doctor) super.currentUser;
         // i want to set the textArea to any previous existing messages
         try {
             showMessage();
