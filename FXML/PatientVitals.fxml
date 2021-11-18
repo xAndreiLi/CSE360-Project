@@ -40,7 +40,7 @@
                               </Text>
                            </children>
                         </Pane>
-                        <GridPane prefHeight="136.0" prefWidth="267.0" style="-fx-border-radius: 3;">
+                        <GridPane prefHeight="165.0" prefWidth="267.0" style="-fx-border-radius: 3;">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -52,9 +52,9 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" GridPane.rowIndex="3">
+                              <Pane prefHeight="42.0" prefWidth="133.0" style="-fx-border-color: #000000;" GridPane.rowIndex="3">
                                  <children>
-                                    <Text layoutX="-37.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Pressure" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                    <Text layoutX="-8.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Pressure" textAlignment="CENTER" wrappingWidth="149.685546875">
                                        <font>
                                           <Font name="ArtifaktElement-Light" size="14.0" />
                                        </font>
@@ -63,7 +63,7 @@
                               </Pane>
                               <Pane prefHeight="47.0" prefWidth="134.0" style="-fx-border-color: #000000;" GridPane.rowIndex="1">
                                  <children>
-                                    <Text layoutX="-37.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                    <Text layoutX="1.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" textAlignment="CENTER" wrappingWidth="133.0">
                                        <font>
                                           <Font name="ArtifaktElement-Light" size="14.0" />
                                        </font>
@@ -72,7 +72,7 @@
                               </Pane>
                               <Pane prefHeight="29.0" prefWidth="110.0" style="-fx-border-color: #000000;" GridPane.rowIndex="2">
                                  <children>
-                                    <Text layoutX="-37.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Body Temp" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                    <Text layoutX="-8.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Body Temp" textAlignment="CENTER" wrappingWidth="149.685546875">
                                        <font>
                                           <Font name="ArtifaktElement-Light" size="14.0" />
                                        </font>
@@ -81,7 +81,7 @@
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;">
                                  <children>
-                                    <Text layoutX="-37.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                    <Text layoutX="-37.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" textAlignment="CENTER" wrappingWidth="208.685546875">
                                        <font>
                                           <Font name="ArtifaktElement-Light" size="14.0" />
                                        </font>
@@ -90,7 +90,7 @@
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" GridPane.columnIndex="1">
                                  <children>
-                                    <TextField fx:id="patientWeight" alignment="CENTER" prefHeight="46.0" prefWidth="133.0" style="-fx-border-color: #000000;">
+                                    <TextField fx:id="patientWeight" alignment="CENTER" prefHeight="42.0" prefWidth="133.0" style="-fx-border-color: #000000;">
                                        <effect>
                                           <Blend />
                                        </effect>
@@ -99,7 +99,7 @@
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
-                                    <TextField fx:id="patientHeight" alignment="CENTER" layoutX="-1.0" prefHeight="46.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                                    <TextField fx:id="patientHeight" alignment="CENTER" prefHeight="41.0" prefWidth="133.0" style="-fx-border-color: #000000;">
                                        <effect>
                                           <Blend />
                                        </effect>
@@ -108,7 +108,7 @@
                               </Pane>
                               <Pane prefHeight="53.0" prefWidth="133.0" style="-fx-border-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <children>
-                                    <TextField fx:id="PatientTemperature" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="52.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                                    <TextField fx:id="PatientTemperature" alignment="CENTER" layoutY="-2.0" prefHeight="42.0" prefWidth="133.0" style="-fx-border-color: #000000;">
                                        <effect>
                                           <Blend />
                                        </effect>
@@ -117,7 +117,7 @@
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <children>
-                                    <TextField fx:id="patientBloodPressure" alignment="CENTER" layoutX="-1.0" prefHeight="34.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                                    <TextField fx:id="patientBloodPressure" alignment="CENTER" prefHeight="41.0" prefWidth="133.0" style="-fx-border-color: #000000;">
                                        <effect>
                                           <Blend />
                                        </effect>
@@ -127,16 +127,21 @@
                            </children>
                         </GridPane>
                         <Pane prefHeight="10.0" prefWidth="221.0" />
-                        <Pane prefHeight="39.0" prefWidth="267.0" style="-fx-border-color: #000000;">
+                        <VBox prefHeight="109.0" prefWidth="290.0">
                            <children>
-                              <Text layoutX="29.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Immunization" textAlignment="CENTER" wrappingWidth="208.685546875">
-                                 <font>
-                                    <Font name="ArtifaktElement-Light" size="19.0" />
-                                 </font>
-                              </Text>
+                              <Pane prefHeight="220.0" prefWidth="267.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text layoutX="41.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Immunization" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                       <font>
+                                          <Font name="ArtifaktElement-Light" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                              <TextArea fx:id="Immunization1" prefHeight="268.0" prefWidth="267.0" />
+                              <Pane prefHeight="142.0" prefWidth="290.0" />
                            </children>
-                        </Pane>
-                        <TextArea fx:id="immunizationTextArea" prefHeight="90.0" prefWidth="267.0" />
+                        </VBox>
                      </children>
                   </VBox>
                </children>
@@ -147,7 +152,12 @@
                      <children>
                         <Pane prefHeight="52.0" prefWidth="371.0">
                            <children>
-                              <Text fx:id="currentPatient" layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="351.685546875">
+                              <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="105.0">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="25.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="currentPatientName" layoutX="121.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.685546875">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="25.0" />
                                  </font>
@@ -158,16 +168,16 @@
                            <children>
                               <VBox prefHeight="239.0" prefWidth="290.0">
                                  <children>
-                                    <Pane prefHeight="122.0" prefWidth="290.0" style="-fx-border-color: #000000;">
+                                    <Pane prefHeight="102.0" prefWidth="290.0" style="-fx-border-color: #000000;">
                                        <children>
-                                          <Text layoutX="41.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Info/allergies/Health Concerns" textAlignment="CENTER" wrappingWidth="208.685546875">
+                                          <Text layoutX="41.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Issues" textAlignment="CENTER" wrappingWidth="208.685546875">
                                              <font>
-                                                <Font name="ArtifaktElement-Light" size="11.0" />
+                                                <Font name="ArtifaktElement-Light" size="19.0" />
                                              </font>
                                           </Text>
                                        </children>
                                     </Pane>
-                                    <TextArea fx:id="additionalHealthInfo1" prefHeight="232.0" prefWidth="290.0" />
+                                    <TextArea fx:id="healthIssues" prefHeight="196.0" prefWidth="290.0" />
                                     <Pane prefHeight="142.0" prefWidth="290.0">
                                        <children>
                                           <Button fx:id="submitHealthInfo1" layoutX="118.0" layoutY="17.0" mnemonicParsing="false" text="Submit" />

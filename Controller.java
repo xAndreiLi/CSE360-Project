@@ -52,6 +52,8 @@ public class Controller implements Initializable{
 		controller.setUser(currentUser);
 		controller.setAccountList(accountList);
 		controller.setSelectedAccount(selectedAccount);
+		controller.setCurrPage(prevPage);
+		controller.setPrevPage(currPage);
 		controller.initData();
 
 		Scene scene = new Scene(root);
