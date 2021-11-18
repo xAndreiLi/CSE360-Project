@@ -49,7 +49,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="goToPatientInfo" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
+                  <Button fx:id="goToPatientInfo" onAction="#handlePatientInfoButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
                </children>
             </Pane>
          </children>

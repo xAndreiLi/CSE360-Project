@@ -24,4 +24,9 @@ public class Account implements Serializable{
 	{
 		return password;
 	}
+
+	public void sendMessage(Account recipient, String message){
+		//Empty to get overridden by children
+	}
+
 }

@@ -40,8 +40,10 @@ public class Doctor extends Account {
         checkoutPatient(visitSummary);
     }
 
-    public void messagePatient(Patient patient, String message) {
+    @Override
+    public void sendMessage(Account recipient, String message) {
         // uses messageHandler to message Patient
+        Patient patient = (Patient) recipient;
         String messageToSend = "Doctor " + doctorFirstName + ": " + message;
         try {
             messageHandler.writeMessage(this, patient, messageToSend);

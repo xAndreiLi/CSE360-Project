@@ -5,14 +5,14 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Patient extends Account{
+public class Patient extends Account {
 
     // Patient Attributes
     float weight, bodyTemp, bloodPres; // vitals taken by Nurse
     String patientEmail, patientFName, patientLName, patientNumber, height, // Patient info and reason for visit
             emerFName, emerLName, emerEmail, emergenNumber, medication, // Emergency Contact Info
-            dateOfBirth, pharmacy, immunization, prevHealthIssues, room; 
-  
+            dateOfBirth, pharmacy, immunization, prevHealthIssues, room;
+
     Doctor currentDoctor;
     MessageHandler messageHandler;
     String[] patientHistoryArray;
@@ -20,8 +20,7 @@ public class Patient extends Account{
 
     // Patient Operations
 
-    public Patient() 
-    {
+    public Patient() {
         // Empty Patient
         super();
         this.dateOfBirth = "Jan. 01, 2000";
@@ -38,7 +37,7 @@ public class Patient extends Account{
         this.immunization = "";
 
         this.pharmacy = "CVS";
-        
+
         // Setting default vitals
         this.weight = 0;
         this.height = "0 ' 0";
@@ -48,9 +47,9 @@ public class Patient extends Account{
         this.room = "N/A";
     }
 
-    public Patient(String username, String password,String fName, String lName, String birthday, String email, String phoneNum, String pharmacy,
-            String emerfName, String emerlName, String emerEmail, String emergenNumber) 
-    {
+    public Patient(String username, String password, String fName, String lName, String birthday, String email,
+            String phoneNum, String pharmacy, String emerfName, String emerlName, String emerEmail,
+            String emergenNumber) {
         super(username, password);
         this.patientFName = fName;
         this.patientLName = lName;
@@ -71,19 +70,29 @@ public class Patient extends Account{
         this.room = "N/A";
     }
 
-    
-
     // This function will be used by the Patients to mesage their doctors
     // It'll take in a Doctor as the receiptient of the message, and the message
     // itself
-    public void messageDoctor(Doctor doc, String messString) {
-        // Uses messageHand
-        String messageToSend = "Patient " + this.patientFName + ": " + messString;
-        try{
-            messageHandler.writeMessage(doc, this, messageToSend);
-        } catch (Exception e) {
-            System.out.println("there was a problem creating a message from doctor to current patient");
-            e.printStackTrace();
+    @Override
+    public void sendMessage(Account acc, String messString) {
+        if (acc instanceof Nurse) {
+            Nurse recipient = (Nurse) acc;
+            String messageToSend = "Patient " + this.patientFName + ": " + messString;
+            try {
+                messageHandler.writeMessage(recipient, this, messageToSend);
+            } catch (Exception e) {
+                System.out.println("there was a problem creating a message from doctor to current patient");
+                e.printStackTrace();
+            }
+        } else {
+            Doctor recipient = (Doctor) acc;
+            String messageToSend = "Patient " + this.patientFName + ": " + messString;
+            try {
+                messageHandler.writeMessage(recipient, this, messageToSend);
+            } catch (Exception e) {
+                System.out.println("there was a problem creating a message from doctor to current patient");
+                e.printStackTrace();
+            }
         }
     }
 
@@ -122,68 +131,78 @@ public class Patient extends Account{
     }
 
     // Setters for Patient Creation if needed
-    public void setWeight(float weight){
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public void setBodyTemp(float bodyTemp){
+    public void setBodyTemp(float bodyTemp) {
         this.bodyTemp = bodyTemp;
     }
-    public void setImmunization(String immunString){
+
+    public void setImmunization(String immunString) {
         this.immunization += ("\n" + immunString);
     }
-    public void setBloodPressure(float bloodPres){
+
+    public void setBloodPressure(float bloodPres) {
         this.bloodPres = bloodPres;
     }
 
-    public void setPatientEmail(String email){
+    public void setPatientEmail(String email) {
         this.patientEmail = email;
     }
-    public void setPatientFirstName(String FirstName){
+
+    public void setPatientFirstName(String FirstName) {
         this.patientFName = FirstName;
     }
-    public void setPatientLastName(String lastName){
+
+    public void setPatientLastName(String lastName) {
         this.patientLName = lastName;
     }
-    public void setPatientPhoneNumber(String number){
+
+    public void setPatientPhoneNumber(String number) {
         this.patientNumber = number;
     }
-    public void setPatientHeight(String height){
+
+    public void setPatientHeight(String height) {
         this.height = height;
     }
 
-    public void setHealthIssues(String healtIssues)
-    {
+    public void setHealthIssues(String healtIssues) {
         this.prevHealthIssues = healtIssues;
     }
 
-    public void setEmergencyContact(String firstName, String lastName, String email, String number){
+    public void setEmergencyContact(String firstName, String lastName, String email, String number) {
         this.emerFName = firstName;
         this.emerLName = lastName;
         this.emerEmail = email;
         this.emergenNumber = number;
     }
-    public void setUsername(String username){
+
+    public void setUsername(String username) {
         super.username = username;
     }
-    public void setPassword(String password){
+
+    public void setPassword(String password) {
         super.password = password;
     }
-    public void setDateOfBirth(String birthday){
+
+    public void setDateOfBirth(String birthday) {
         this.dateOfBirth = birthday;
     }
 
-    public void setDateOfBirth(String month, String day, String year){
+    public void setDateOfBirth(String month, String day, String year) {
         String birthday = month + " " + day + ", " + year;
         this.dateOfBirth = birthday;
     }
-    public void setPharmacy(String pharmacy){
+
+    public void setPharmacy(String pharmacy) {
         this.pharmacy = pharmacy;
     }
 
-    public void setRoom(String room){
+    public void setRoom(String room) {
         this.room = room;
     }
+
     // Getters for the View Own Patient Info
     public float getWeight() {
         return this.weight;
@@ -197,12 +216,11 @@ public class Patient extends Account{
         return this.bloodPres;
     }
 
-    public String getImmunization()
-    {
+    public String getImmunization() {
         return this.immunization;
     }
-    public String getPrevHealthIssues()
-    {
+
+    public String getPrevHealthIssues() {
         return this.prevHealthIssues;
     }
 
@@ -250,27 +268,27 @@ public class Patient extends Account{
         return this.emergenNumber;
     }
 
-    public String getMedication(){
+    public String getMedication() {
         return this.medication;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return this.username;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return this.password;
     }
 
-    public String getDateOfBirth(){
+    public String getDateOfBirth() {
         return this.dateOfBirth;
     }
 
-    public String getPharmacy(){
+    public String getPharmacy() {
         return this.pharmacy;
     }
 
-    public String getRoom(){
+    public String getRoom() {
         return this.room;
     }
 }

@@ -44,9 +44,11 @@ public class DoctorPageController extends Controller {
 
     @Override
     public void initData() {
-        currentDoctor = (Doctor) currentUser;
-        currentPatient = (Patient) selectedAccount;
+        currentDoctor = (Doctor) super.currentUser;
+        currentPatient = (Patient) super.selectedAccount;
+        // set current patients and doctors
         currentDoctor.setCurrentPatient(currentPatient);
+        currentPatient.assignDoctor(currentDoctor);
 
         // update selectedPatient text
         if (currentPatient != null) {

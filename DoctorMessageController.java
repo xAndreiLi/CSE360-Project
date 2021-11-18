@@ -24,10 +24,12 @@ public class DoctorMessageController extends Controller {
     private String messageToSend, messageToShow, filename, doctorHash, patientHash;
     private MessageHandler messageHandler = new MessageHandler();
     private Doctor doctor;
+    private Patient patient;
 
     @Override
     public void initData() {
-        doctor = (Doctor) currentUser;
+        doctor = (Doctor) super.currentUser;
+        patient = (Patient) super.selectedAccount;
         // i want to set the textArea to any previous existing messages
         try {
             showMessage();
@@ -43,13 +45,22 @@ public class DoctorMessageController extends Controller {
 
     @FXML
     void handleDoctorSendMessage(ActionEvent event) throws IOException {
+        // if text is empty, dont do anything
+        if (textBox.getText() == null || textBox.getText().trim().isEmpty()) {
+            textBox.setPromptText("Message is empty");
+            return;
+        }
+
         // set the message equal to whatever is in the text box
         messageToSend = textBox.getText();
         // message the patient
-        doctor.messagePatient(doctor.getCurrentPatient(), messageToSend);
+        doctor.sendMessage(patient, messageToSend);
 
         // update the textArea
         showMessage();
+
+        // clears the text after sending
+        textBox.clear();
     }
 
     /**
@@ -61,7 +72,7 @@ public class DoctorMessageController extends Controller {
     private void showMessage() throws IOException {
         // get hashes of the doctor and patient
         doctorHash = messageHandler.getHashCode(doctor) + "";
-        patientHash = messageHandler.getHashCode(doctor.getCurrentPatient()) + "";
+        patientHash = messageHandler.getHashCode(patient) + "";
         // this is where the message is stored
         filename = doctorHash + patientHash + ".txt";
 

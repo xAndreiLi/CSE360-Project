@@ -45,7 +45,7 @@ public class updatePatientInformation extends Controller{
     @FXML
     private void accountUpdateconfirmButton(ActionEvent event) throws IOException{
         Patient cp = (Patient)super.currentUser;
-
+      
         cp.setPatientFirstName(firstName.getText());
         cp.setPatientLastName(lastName.getText());
         cp.setPatientEmail(email.getText());
@@ -53,7 +53,6 @@ public class updatePatientInformation extends Controller{
         cp.setUsername(username.getText());
         cp.setPharmacy(pharmacyPref.getText());
         cp.setPatientPhoneNumber(phoneNumber.getText());
-
         cp.setEmergencyContact(emerContFirstName.getText(), EmerContLastName.getText(), EmerContEmail.getText(), EmerContPhone.getText());
 
         errorMessage.setText("Updated");
