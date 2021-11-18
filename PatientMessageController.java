@@ -13,21 +13,21 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class MessageHandlerController extends Controller {
+public class PatientMessageController extends Controller {
     @FXML
     TextArea textArea;
     @FXML
     TextField textBox;
     @FXML
-    Button sendMessage;
-    @FXML
-    Button patientMessageBackButton;
+    Button sendMessage, patientMessageBackButton;
 
     private String messageToSend, messageToShow, filename, doctorHash, patientHash;
     private MessageHandler messageHandler = new MessageHandler();
+    private Patient patient;
 
     @Override
     public void initData() {
+        patient = (Patient) currentUser;
         // i want to set the textArea to any previous existing messages
         try {
             showMessage();
@@ -37,22 +37,12 @@ public class MessageHandlerController extends Controller {
     }
 
     @FXML
-    void handleDoctorSendMessage(ActionEvent event) throws IOException {
-        Doctor doctor = (Doctor) super.currentUser;
-
-        // set the message equal to whatever is in the text box
-        messageToSend = textBox.getText();
-        // message the patient
-        doctor.messagePatient(doctor.getCurrentPatient(), messageToSend);
-
-        // update the textArea
-        showMessage();
+    void handleBackButton(ActionEvent event) throws IOException {
+        super.backButton(super.prevPage, patientMessageBackButton);
     }
 
     @FXML
     void handlePatientSendMessage(ActionEvent event) throws IOException {
-        Patient patient = (Patient) super.currentUser;
-
         // set the message equal to whatever is in the text box
         messageToSend = textBox.getText();
         // message the patient
@@ -69,12 +59,11 @@ public class MessageHandlerController extends Controller {
      * @throws IOException
      */
     private void showMessage() throws IOException {
-        Doctor doctor = (Doctor) super.currentUser;
         // get hashes of the doctor and patient
-        doctorHash = messageHandler.getHashCode(doctor) + "";
-        patientHash = messageHandler.getHashCode(doctor.getCurrentPatient()) + "";
+        doctorHash = messageHandler.getHashCode(patient.currentDoctor) + "";
+        patientHash = messageHandler.getHashCode(patient) + "";
         // this is where the message is stored
-        filename = "Messages/" + doctorHash + patientHash + ".txt";
+        filename = doctorHash + patientHash + ".txt";
 
         // update the textArea and show the message
         messageToShow = messageHandler.readMessage(filename);
