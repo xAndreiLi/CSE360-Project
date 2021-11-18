@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Nurse extends Account {
     // work done by Long Ly
@@ -55,7 +56,7 @@ public class Nurse extends Account {
     }
 
     //
-    public String[] patientHistory() {
+    public ArrayList<String> patientHistory() {
         return this.patient.getPatientHistoryArray();
     }
 

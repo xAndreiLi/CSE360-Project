@@ -2,6 +2,7 @@
 
 // 11-11-2021
 // Should be all finsihed. Just need to test and debug as a whole
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,7 +16,7 @@ public class Patient extends Account {
 
     Doctor currentDoctor;
     MessageHandler messageHandler;
-    String[] patientHistoryArray;
+    ArrayList<String> patientHistoryArray;
     public Queue<String> patientHistory = new LinkedList<>();
 
     // Patient Operations
@@ -43,7 +44,7 @@ public class Patient extends Account {
         this.height = "0 ' 0";
         this.bodyTemp = 0;
         this.bloodPres = 0;
-        this.patientHistoryArray = new String[10];
+        this.patientHistoryArray = new ArrayList<String>();
         this.room = "N/A";
 
         this.messageHandler = new MessageHandler();
@@ -68,7 +69,7 @@ public class Patient extends Account {
         this.height = "0 ' 0";
         this.bodyTemp = 0;
         this.bloodPres = 0;
-        this.patientHistoryArray = new String[50];
+        this.patientHistoryArray = new ArrayList<String>();
         this.room = "N/A";
 
         this.messageHandler = new MessageHandler();
@@ -115,7 +116,7 @@ public class Patient extends Account {
         return success;
     }
 
-    public String[] getPatientHistoryArray() {
+    public ArrayList<String> getPatientHistoryArray() {
         return this.patientHistoryArray;
     }
 

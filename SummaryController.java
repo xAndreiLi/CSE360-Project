@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -17,7 +18,7 @@ public class SummaryController extends Controller {
 
 	private Patient patient;
 
-	private String[] summaries;
+	private ArrayList<String> summaries;
 	private StringBuilder stringOfSummaries = new StringBuilder("");
 
 	@FXML
@@ -28,13 +29,17 @@ public class SummaryController extends Controller {
 	@Override
 	public void initData() {
 		// initialize summaries here later
-		patient = (Patient) super.selectedAccount;
+		if(super.currentUser instanceof Patient){
+			patient = (Patient) super.currentUser;
+		} else {
+			patient = (Patient) super.selectedAccount;
+		}
 
 		summaries = patient.getPatientHistoryArray();
 
 		// use string builder to make a string from the array
-		for (int i = 0; i < summaries.length; i++) {
-			stringOfSummaries.append(summaries[i] + "\n");
+		for (int i = 0; i < summaries.size(); i++) {
+			stringOfSummaries.append(summaries.get(i) + "\n");
 		}
 
 		// update the text to show summary
