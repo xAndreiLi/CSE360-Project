@@ -37,22 +37,42 @@
                      <children>
                         <Pane prefHeight="135.0" prefWidth="206.0">
                            <children>
-                              <Text fx:id="displayFirstName" layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                              <Text layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayBirthDate" layoutX="7.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOB : ">
+                              <Text layoutX="7.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOB : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayEmail" layoutX="7.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+                              <Text layoutX="7.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayPhone" layoutX="7.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                              <Text layoutX="7.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="displayPhoneNum" layoutX="88.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="displayEmail" layoutX="88.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="displayDateOfBirth" layoutX="88.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
+                                 <font>
+                                    <Font name="ArtifaktElement-Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="displayUsername" layoutX="88.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
@@ -61,22 +81,22 @@
                         </Pane>
                         <Pane prefHeight="160.0" prefWidth="206.0">
                            <children>
-                              <Text fx:id="emergFirstNameText" layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
+                              <Text layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="emergLastNameText" layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
+                              <Text layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="emergEmailText" layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+                              <Text layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="emergPhoneText" layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                              <Text layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
@@ -86,6 +106,10 @@
                                     <Font name="System Italic" size="12.0" />
                                  </font>
                               </Text>
+                              <Text fx:id="emergFirstNameText" layoutX="100.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergLastNameText" layoutX="100.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergEmailText" layoutX="100.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
+                              <Text fx:id="emergPhoneText" layoutX="100.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.0" />
                            </children>
                         </Pane>
                      </children>
