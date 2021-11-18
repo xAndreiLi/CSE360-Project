@@ -93,7 +93,12 @@ public class PatientMainMenuController extends Controller{
     void handleEditPatientInformation(ActionEvent event) throws IOException{
         super.goToPage("FXML/updatePatientInformation.fxml", editPatientInfo);
     }
-	
+
+    @FXML
+    void handleMessageDoctor(ActionEvent event) throws IOException{
+        super.goToPage("FXML/patientMessaging.fxml", doctorMessage);
+    }
+
 	@Override
     public void initData() {
         Patient currentPatient = (Patient) super.currentUser;

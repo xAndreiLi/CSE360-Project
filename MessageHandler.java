@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 //import java.util.Scanner;
 
@@ -42,6 +43,10 @@ public class MessageHandler implements Serializable {
         // file name for the file
         String fileName = fileDir + accountHash + patientHash + ".txt";
 
+        Path dir = Paths.get("./Messages");
+        if(!Files.isDirectory(dir)){
+            new File("./Messages").mkdirs();
+        }
         messageFile = new File(fileName);
         // this checks if the file already exists
         if (messageFile.exists()) {

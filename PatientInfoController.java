@@ -87,7 +87,11 @@ public class PatientInfoController extends Controller {
 
     @FXML
     void handleBackButton(ActionEvent event) throws IOException{
-		super.backButton(super.prevPage, PatiInfoBack);
+		if(super.currentUser instanceof Nurse){
+            super.goToPage("FXML/NurseSelectPatientPage.fxml", PatiInfoBack);
+        } else{
+            super.goToPage("FXML/DoctorSelectPatient.fxml", PatiInfoBack);
+        }
 	}
 
     @FXML
