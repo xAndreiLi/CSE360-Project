@@ -23,7 +23,7 @@
          <children>
             <Pane prefHeight="350.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="PatientListButton" layoutX="63.0" layoutY="221.0" mnemonicParsing="false" text="Patient List" />
+                  <Button fx:id="PatientListButton" onAction="#handlePatientListButton" layoutX="63.0" layoutY="221.0" mnemonicParsing="false" text="Patient List" />
                   <Text layoutX="16.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Patient" textAlignment="CENTER" wrappingWidth="167.685546875">
                      <font>
                         <Font name="ArtifaktElement-Light" size="23.0" />
@@ -39,7 +39,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="editVitalsButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Edit Vitals" />
+                  <Button fx:id="editVitalsButton" onAction="#handlePatientVitalsButton" layoutX="63.0" layoutY="223.0" mnemonicParsing="false" text="Edit Vitals" />
                </children>
             </Pane>
             <Pane prefHeight="350.0" prefWidth="200.0">
@@ -49,7 +49,7 @@
                         <Font name="ArtifaktElement-Light" size="23.0" />
                      </font>
                   </Text>
-                  <Button fx:id="goToPatientInfo" onAction="#handlePatientListButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
+                  <Button fx:id="goToPatientInfo" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" text="Patient Info" />
                </children>
             </Pane>
          </children>

@@ -6,12 +6,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class Controller implements Initializable{
 
-	protected Account currentUser;
+	protected Account currentUser, selectedAccount;
 	protected ArrayList<Account> accountList;
+	protected String currPage, prevPage;
 
 	public void setUser(Account user){
 		currentUser = user;
@@ -21,8 +27,58 @@ public class Controller implements Initializable{
 		accountList = list;
 	}
 
-	public void initData(){
+	public void setSelectedAccount(Account account){
+		selectedAccount = account;
+	}
 
+	public void setCurrPage(String page){
+		currPage = page;
+	}
+
+	public void setPrevPage(String page){
+		prevPage = page;
+	}
+
+	public void backButton(String prevPage, Button button) throws IOException{
+        Stage stage;
+		Parent root;
+		FXMLLoader loader;
+		Controller controller;
+		stage = (Stage) button.getScene().getWindow();
+		loader = new FXMLLoader(getClass().getResource(prevPage));
+		root = loader.load();
+		
+		controller = loader.getController();
+		controller.setUser(currentUser);
+		controller.setAccountList(accountList);
+		controller.setSelectedAccount(selectedAccount);
+		controller.initData();
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	public void goToPage(String newPage, Button button) throws IOException{
+		Stage stage;
+		Parent root;
+		FXMLLoader loader;
+		Controller controller;
+		stage = (Stage) button.getScene().getWindow();
+		loader = new FXMLLoader(getClass().getResource(newPage));
+		root = loader.load();
+		
+		controller = loader.getController();
+		controller.setUser(currentUser);
+		controller.setAccountList(accountList);
+		controller.setSelectedAccount(selectedAccount);
+		controller.setCurrPage(newPage);
+		controller.setPrevPage(currPage);
+		controller.initData();
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	public void saveData() throws IOException{
@@ -30,6 +86,10 @@ public class Controller implements Initializable{
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(accountList);
         oos.close();
+	}
+
+	public void initData(){
+		//Empty for child classes to override
 	}
 
 	@Override

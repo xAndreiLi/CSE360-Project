@@ -14,43 +14,35 @@ import javafx.stage.Stage;
 
 public class DoctorPageController extends Controller{
 
+    private Doctor currentDoctor;
+    private Patient currentPatient;
+
     @FXML
-    private Button PatientListButton;
+    private Button PatientListButton, editPhysicalButton, goToPatientInfo;
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) PatientListButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        super.goToPage("FXML/PatientList.fxml", PatientListButton);
     }
 
     @FXML
     void handlePatientPhysicalButton(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) PatientListButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("FXML/PatientPhysical.fxml"));
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if(currentPatient!=null){
+			super.goToPage("FXML/PatientPhysical.fxml", editPhysicalButton);
+		}
     }
 
     @FXML
     void handlePatientInfoButton(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) PatientListButton.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("FXML/PatientInformation.fxml"));
+        if(currentPatient!=null){
+			super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
+		}
+    }
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    @Override
+    public void initData(){
+        currentDoctor = (Doctor) currentUser;
+        currentPatient = (Patient) selectedAccount;
     }
 
     @Override
