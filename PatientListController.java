@@ -8,31 +8,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 
-public class PatientListController extends Controller{
+public class PatientListController extends Controller {
+	@FXML
+	private Button patiListBack;
 
 	@FXML
-	Button patiListBack;
-  
-  @FXML
-  private Button patiListBack;
-
-  @FXML
-  private TableColumn<?, ?> patiListBirthDate;
-
-  @FXML
-  private TableColumn<?, ?> patiListName;
-
-  @FXML
-  private TableColumn<?, ?> patiListPharmacy;
-
-  @FXML
-  private TableColumn<?, ?> patiListRoom;
+	private TableColumn<?, ?> patiListBirthDate;
 
 	@FXML
-  public void handleBackButton(ActionEvent event) throws IOException{
-    super.backButton(super.prevPage, patiListBack);
+	private TableColumn<?, ?> patiListName;
+
+	@FXML
+	private TableColumn<?, ?> patiListPharmacy;
+
+	@FXML
+	private TableColumn<?, ?> patiListRoom;
+
+	@FXML
+	public void handleBackButton(ActionEvent event) throws IOException {
+		super.backButton(super.prevPage, patiListBack);
 	}
 
 	@Override
@@ -40,8 +37,8 @@ public class PatientListController extends Controller{
 
 	}
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-        
-    }
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+	}
 }
