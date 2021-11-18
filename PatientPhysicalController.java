@@ -12,21 +12,21 @@ import javafx.scene.control.TextArea;
 public class PatientPhysicalController extends Controller {
 
 	@FXML
-	Button backPatientPhysical, submitMedPrescription;
+	private Button backPatientPhysical, submitMedPrescription;
 	@FXML
-	TextArea patientSummary, prescribedMedication;
+	private TextArea patientSummary, prescribedMedication;
 	@FXML
-	DatePicker patiPhysicalDate;
+	private DatePicker patiPhysicalDate;
 
 	private Doctor doctor;
 	private Patient patient;
 	private String patientSummaryString, medicationString, dateString;
 
-	void handleBackButton(ActionEvent event) throws IOException {
+	public void handleBackButton(ActionEvent event) throws IOException {
 		super.backButton(super.prevPage, backPatientPhysical);
 	}
 
-	void handleSubmitButton(ActionEvent event) throws IOException {
+	public void handleSubmitButton(ActionEvent event) throws IOException {
 		// grab text from textareas and date
 		patientSummaryString = patientSummary.getText();
 		medicationString = prescribedMedication.getText();
@@ -34,6 +34,7 @@ public class PatientPhysicalController extends Controller {
 		// call examinePatient() to write summary and add it to the patient's patient
 		// history array
 		doctor.examinePatient(patientSummaryString, medicationString, dateString);
+		super.saveData();
 	}
 
 	@Override
