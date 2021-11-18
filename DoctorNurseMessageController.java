@@ -46,7 +46,7 @@ public class DoctorNurseMessageController extends Controller {
         // set the message equal to whatever is in the text box
         messageToSend = textBox.getText();
         // message the patient
-        doctor.messagePatient(doctor.getCurrentPatient(), messageToSend);
+        doctor.sendMessage(doctor.getCurrentPatient(), messageToSend);
 
         // update the textArea
         showMessage();

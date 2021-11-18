@@ -42,8 +42,9 @@ public class Nurse extends Account {
         this.patient = patient;
     }
 
-    public void messagePatient(Patient patient, String message) {
+    public void sendMessage(Account recipient, String message) {
         // uses messageHandler to message Patient
+        Patient patient = (Patient) recipient;
         String messageToSend = "Nurse " + username + ": " + message;
         try {
             messageHandler.writeMessage(this, patient, messageToSend);
