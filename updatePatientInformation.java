@@ -60,6 +60,6 @@ public class updatePatientInformation extends Controller{
     }
     @FXML
     void handleBackButton(ActionEvent event) throws IOException{
-        backButton("FXML/PatientMainMenu.fxml", accountUpdateBACKButton);
+        super.backButton("FXML/PatientMainMenu.fxml", accountUpdateBACKButton);
     }
 }

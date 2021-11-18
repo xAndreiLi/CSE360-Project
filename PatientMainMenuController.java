@@ -94,6 +94,11 @@ public class PatientMainMenuController extends Controller{
     void handlePatientSummaryButton(ActionEvent event) throws IOException{
         super.goToPage("FXML/Summary.fxml", PatientSummary);
     }
+
+    @FXML
+    void handleEditPatientInformation(ActionEvent event) throws IOException{
+        super.goToPage("FXML/updatePatientInformation.fxml", editPatientInfo);
+    }
 	
 	@Override
     public void initData() {
