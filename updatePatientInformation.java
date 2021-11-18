@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.Action;
 
@@ -40,7 +42,17 @@ public class updatePatientInformation extends Controller{
         username.setText(currentPatient.getUsername());
         pharmacyPref.setText(currentPatient.getPharmacy());
         phoneNumber.setText(currentPatient.getPhoneNumber());
+        dateOfBirth.setValue(LOCAL_DATE(currentPatient.getDateOfBirth()));
     }
+
+
+    public static final LocalDate LOCAL_DATE (String dateString)
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(dateString, formatter);
+        return localDate;
+    }
+
 
     @FXML
     private void accountUpdateconfirmButton(ActionEvent event) throws IOException{
@@ -55,6 +67,7 @@ public class updatePatientInformation extends Controller{
         cp.setPatientPhoneNumber(phoneNumber.getText());
         cp.setEmergencyContact(emerContFirstName.getText(), EmerContLastName.getText(), EmerContEmail.getText(), EmerContPhone.getText());
 
+        cp.setDateOfBirth(dateOfBirth.getValue().toString());
         errorMessage.setText("Updated");
     }
     @FXML
