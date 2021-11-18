@@ -26,6 +26,16 @@ public class MessageHandlerController extends Controller {
     private String messageToSend, messageToShow, filename, doctorHash, patientHash;
     private MessageHandler messageHandler = new MessageHandler();
 
+    @Override
+    public void initData() {
+        // i want to set the textArea to any previous existing messages
+        try {
+            showMessage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     void handleDoctorSendMessage(ActionEvent event) throws IOException {
         Doctor doctor = (Doctor) super.currentUser;

@@ -27,32 +27,26 @@ public class DoctorPageController extends Controller {
 
     @FXML
     void handlePatientPhysicalButton(ActionEvent event) throws IOException {
-        if(currentPatient!=null){
-			super.goToPage("FXML/PatientPhysical.fxml", editPhysicalButton);
-		}
+        if (currentPatient != null) {
+            super.goToPage("FXML/PatientPhysical.fxml", editPhysicalButton);
+        }
     }
 
     @FXML
     void handlePatientInfoButton(ActionEvent event) throws IOException {
-        if(currentPatient!=null){
-			super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
-		}
+        if (currentPatient != null) {
+            super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
+        }
     }
 
     @Override
-    public void initData(){
+    public void initData() {
         currentDoctor = (Doctor) currentUser;
         currentPatient = (Patient) selectedAccount;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // i want to show the Doctor object's currentPatient here if they have one
-        // if (Doctor.currentPatient != null)
-        // { update the Text with id="selectedPatient" }
-        if (super.currentUser instanceof Doctor) {
-            // how to use doctor methods
-        }
     }
 
 }
