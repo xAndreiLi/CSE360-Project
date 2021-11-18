@@ -34,6 +34,8 @@ public class Doctor extends Account {
 
         String visitSummary = date + ": " + patientSummary;
 
+        System.out.println(visitSummary);
+
         prescribeMedication(medication);
         checkoutPatient(visitSummary);
     }
