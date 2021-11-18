@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 public class NursePageController extends Controller{
 
 	private Nurse currentNurse;
+	private Patient currentPatient;
 
     @FXML
 	private Button PatientListButton;
@@ -27,34 +28,27 @@ public class NursePageController extends Controller{
 
     @FXML
     void handlePatientListButton(ActionEvent event) throws IOException{
-		System.out.println("Go to Patient Info Pressed");
-        Stage stage;
-		Parent root;
-		stage = (Stage) PatientListButton.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/PatientList.fxml"));
-
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		super.goToPage("FXML/PatientList.fxml", PatientListButton);
     }
 
 	@FXML
     void handlePatientVitalsButton(ActionEvent event) throws IOException{
-        Stage stage;
-		Parent root;
-		stage = (Stage) editVitalsButton.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getResource("FXML/PatientVitals.fxml"));
-
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		if(currentPatient!=null){
+			super.goToPage("FXML/PatientVitals.fxml", editVitalsButton);
+		}
     }
 
-	void setNurse(Nurse nurse)
-	{
-		this.currentNurse = nurse;
+	void handlePatientInfoButton(ActionEvent event) throws IOException{
+		if(currentPatient!=null){
+			super.goToPage("FXML/PatientInformation.fxml", goToPatientInfo);
+		}
 	}
 
+	@Override
+	public void initData() {
+		currentNurse = (Nurse) super.currentUser;
+		currentPatient = (Patient) super.selectedAccount;
+	}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="PatientMainMenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane fx:id="displayUserName" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #335a63;">
          <children>
@@ -23,7 +23,7 @@
          <children>
             <Pane prefHeight="44.0" prefWidth="600.0">
                <children>
-                  <Text fx:id="currentPatient" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="554.685546875">
+                  <Text fx:id="currentPatientText" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient : " wrappingWidth="554.685546875">
                      <font>
                         <Font name="ArtifaktElement-Light" size="25.0" />
                      </font>
@@ -61,22 +61,22 @@
                         </Pane>
                         <Pane prefHeight="160.0" prefWidth="206.0">
                            <children>
-                              <Text fx:id="displayContactFirstName" layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
+                              <Text fx:id="emergFirstNameText" layoutX="9.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactLastName" layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
+                              <Text fx:id="emergLastNameText" layoutX="8.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactEmail" layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+                              <Text fx:id="emergEmailText" layoutX="8.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="displayContactName" layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+                              <Text fx:id="emergPhoneText" layoutX="8.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
                                  <font>
                                     <Font name="ArtifaktElement-Light" size="14.0" />
                                  </font>
@@ -157,7 +157,7 @@
                               </VBox>
                            </children>
                         </HBox>
-                        <Button fx:id="PatientSummary" layoutX="259.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Summary" />
+                        <Button fx:id="PatientSummary" onAction="#handlePatientSummaryButton" layoutX="259.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Summary" />
                         <Button fx:id="editPatientInfo" layoutX="14.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Edit Information" />
                         <Button fx:id="doctorMessage" layoutX="135.0" layoutY="264.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="109.0" text=" Message Doctor" />
                      </children>
